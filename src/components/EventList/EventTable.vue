@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tableWrap">
     <table v-if="selectedTab[0] !== ''">
       <colgroup>
         <col width="20%" />
@@ -15,7 +15,7 @@
       </colgroup>
       <thead>
         <tr>
-          <th>이름</th>
+          <th>이벤트 프로모션명</th>
           <th>내용</th>
           <th>이벤트코드</th>
           <th>소스위치</th>
@@ -45,8 +45,8 @@
             {{ item.function }}
           </td>
           <td>
-            <div class="previewWrap" @mouseover="doMouseOver(item.pageUrl)">
-              <a href="javascript:;">미리보기</a>
+            <div class="previewWrap" @click="doMouseOver(item.pageUrl)">
+              <a href="javascript:;" class="previewWrapbt">미리보기</a>
             </div>
           </td>
           <td>
@@ -127,18 +127,18 @@ export default {
       preview: this.selectedTab,
       selpreview: '',
       selPageUrl: '',
-      showSearch: false,
+      closepopboolean: false,
     };
   },
   components: {
     Iframe,
   },
-  //   created() {
-  //     window.addEventListener('click', this.closepop);
-  //   },
-  //   destroyed() {
-  //     window.removeEventListener('click', this.closepop);
-  //   },
+  // destroyed() {
+  //   window.removeEventListener('click', this.aa);
+  // },
+  // created(){
+  //   window.addEventListener('click', this.aa);
+  // },
   methods: {
     doMouseOver(e) {
       // const target = document.querySelector(`.area${e}`)
@@ -146,25 +146,85 @@ export default {
       const target = document.querySelector('.previewPop');
       this.selPageUrl = e;
       target.style.display = 'block';
+      this.closepopboolean = true;
       //const eachFrame = e.target;
       //console.log(eachFrame)
       //eachFrame.classList.add('selectedFrame')
     },
     closePreviewPop(e) {
-      this.showSearch = true;
       const target = e.target.parentElement;
       target.style.display = 'none';
+      this.closepopboolean = false;
+      //window.addEventListener('click', this.aa);
     },
     closepop() {
-      //   const target = document.querySelector('.previewPop');
-      //   console.log(target);
-      //   target.style.display = 'none';
+      const target = document.querySelector('.previewPop');
+      target.style.display = 'none';
+      this.closepopboolean = false;
+    },
+    aa(e) {
+      if (this.closepopboolean && e) {
+        const target = document.querySelector('.previewPop');
+        target.style.display = 'none';
+      }
+    },
+  },
+  watch: {
+    closepopboolean() {
+      //window.addEventListener('click', this.aa);
+      // console.log(e);
+      // if (e === true) {
+      //   window.addEventListener('click', this.aa);
+      // } else if (e === false) {
+      //   window.removeEventListener('click', this.aa);
+      // }
+      document.querySelector('body').addEventListener('click', function (e) {
+        if (
+          e.target.className ==
+          e.currentTarget.querySelector('.previewWrapbt').className
+        ) {
+          console.log('correct');
+        } else {
+          this.aa;
+        }
+      });
     },
   },
 };
 </script>
 
 <style scoped>
+.tableWrap {
+  display: flex;
+  width: 100%;
+}
+.tableWrap table {
+  margin: 0 auto;
+}
+.tableWrap table th {
+  border-bottom: 1px solid rgb(230, 230, 230);
+  color: rgb(130, 130, 130);
+  text-align: center;
+  font-size: 0.75em;
+  font-weight: 700;
+  padding: 16px 6px 16px 6px;
+}
+.tableWrap table tbody tr {
+  box-sizing: border-box;
+  border-collapse: separate;
+  text-indent: initial;
+  border-spacing: 2px;
+}
+.tableWrap table tbody tr td {
+  vertical-align: inherit;
+  white-space: nowrap;
+  font-size: 0.8em;
+  padding: 16px 6px 16px 6px;
+  height: 22px;
+  font-size: 0.75em;
+  font-weight: 400;
+  text-align: center;
+}
 .area {
 }
 .area > iframe {
@@ -179,12 +239,26 @@ export default {
   height: 1000px;
 }
 .previewPop {
-  position: absolute;
-  left: 150px;
-  width: 1100px;
-  height: 50vh;
+  position: fixed;
+  right: 575px;
+  top: 130px;
+  width: 1200px;
+  height: 78vh;
+  overflow: hidden;
   display: none;
   text-align: right;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px black;
+}
+.previewPop button {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.previewPop button:hover {
+  cursor: pointer;
 }
 .previewWrap {
   z-index: 9999;

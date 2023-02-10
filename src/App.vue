@@ -30,6 +30,6 @@
   color: #42b983;
 }
 li {
-  list-style:none;
+  list-style: none;
 }
 </style>

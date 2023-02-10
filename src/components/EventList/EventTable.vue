@@ -7,7 +7,7 @@
             <col width="5%">
             <col width="15%">
             <col width="10%">
-            <col width="10%">
+            <col width="5%">
             <col width="5%">
             <col width="5%">
             <!-- <col width="10%">
@@ -45,11 +45,11 @@
                     {{item.function}}
                 </td>
                 <td>
-                    <div 
-                        :class="`area${index}`" 
-                        @click="doMouseOver(index)" 
+                    <div                         
+                        class="previewWrap"
+                        @click="doMouseOver(item.pageUrl)" 
                     >
-                        <iframe :src="item.pageUrl" frameborder="0" height ="100%" width="100%"></iframe>
+                        <a href="javascript:;">미리보기</a>
                     </div>
                 </td>
                 <td>
@@ -111,13 +111,16 @@
             </tr>
         </tbody>
     </table>
-    <!-- <div class="previewPop">
-        <iframe :src="item.pageUrl" frameborder="0" height ="100%" width="100%"></iframe>
-    </div> -->
+    <div class="previewPop">
+        <button @click="closePreviewPop">X</button>
+        <Iframe :sel-page-url="selPageUrl" />
+    </div>
   </div>
 </template>
 
 <script>
+import Iframe from '@/components/iframe/Iframe'
+
 export default {
     props:{
         selectedTab: Array,
@@ -126,34 +129,33 @@ export default {
     data(){
         return {
             preview:this.selectedTab,
-            selpreview:''
+            selpreview:'',
+            selPageUrl:''
         }
+    },
+    components:{
+        Iframe
     },
     mounted(){
         // console.log(this.defaultSelectTab)
         console.log(this.preview)     
     },
     methods:{
-        // previewEvent(){
-        //     $('a').on({
-        //     mouseenter :function(){
-        //         var $this = $(this);
-        //         var href = $this.attr('href');
-        //         var html = '<iframe src="'+href+'" frameborder="0" width="1240" height="1500" class="sitemapIframe"></iframe>';
-        //         $this.append(html)
-        //     },
-        //     mouseleave : function(){
-        //         $(this).find('.sitemapIframe').remove();
-        //     }
-        // })
-        // }
         doMouseOver(e){
-            const target = document.querySelector(`.area${e}`)
-            target.classList.add('selectedFrame')
+            console.log(e)
+            // const target = document.querySelector(`.area${e}`)
+            // target.classList.add('selectedFrame')
+            const target = document.querySelector('.previewPop')
+            this.selPageUrl = e
+            target.style.display = 'block'
             //const eachFrame = e.target;
             //console.log(eachFrame)
             //eachFrame.classList.add('selectedFrame')
         },
+        closePreviewPop(e){
+            const target = e.target.parentElement
+            target.style.display = 'none'
+        }
     }
 }
 </script>
@@ -175,7 +177,12 @@ export default {
 .previewPop {
     position: absolute;
     left: 150px;
-    width: 1000px;
-    height: 1000px;
+    width: 1100px;
+    height: 50vh;
+    display: none;    
+    text-align: right;
+}
+.previewWrap {
+    z-index: 9999;
 }
 </style>

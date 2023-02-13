@@ -8,6 +8,9 @@
 export default {
     props:{
         selPageUrl:String
+    },
+    mounted(){
+      console.log('zz',this.selPageUrl)
     }
 }
 </script>

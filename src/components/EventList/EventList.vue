@@ -11,6 +11,9 @@
         {{ item }}
       </li>
     </ul>
+    <Search
+
+    />
     <EventTable
       v-if="selectedTab.length > 0"
       :selected-tab="selectedTab"
@@ -20,12 +23,14 @@
 </template>
 
 <script>
-import EventTable from '@/components/EventList/EventTable.vue';
+import EventTable from '@/components/eventlist/EventTable';
 import data from '@/api/data.json';
+import Search from '@/components/search/SearchForm';
 
 export default {
   components: {
     EventTable,
+    Search,
   },
   data() {
     return {
@@ -33,15 +38,17 @@ export default {
       eventTab: Object.keys(data),
       selectedTab: [],
       isActive: false,
+      categoryList: []
     };
   },
   created() {
     var currentTime = new Date();
     var thisYear = currentTime.getFullYear();
     data[thisYear].forEach((v, i) => {
-      return this.selectedTab.push(data[2023][i]);
+      this.selectedTab.push(data[2023][i]);
     });
     this.isActive = true;
+    //console.log(data)
   },
   mounted() {
     const lastTab = this.$refs.tab;
@@ -79,6 +86,11 @@ export default {
   cursor: pointer;
 }
 .eventTab li.on {
-  color: red;
+  color: #4463d5;
+  font-weight: bold;
+}
+.eventTab li:hover {
+  color: #4463d5;
+  font-weight: bold;
 }
 </style>

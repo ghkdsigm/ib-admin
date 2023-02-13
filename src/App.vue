@@ -16,7 +16,10 @@
   text-align: center;
   color: #2c3e50;
 }
-
+body{
+  margin:0;
+  padding:0;
+}
 #nav {
   padding: 30px;
 }
@@ -28,6 +31,9 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+ul {
+  padding:0;
 }
 li {
   list-style: none;

@@ -403,15 +403,14 @@ a.btn-layerClose {
 /* Image Icon for the Background */
 .thumbnail-container::before {
   position: absolute;
-  left: ~"calc(50% - 16px)";
-  top: ~"calc(50% - 18px)";
+  left: "calc(50% - 16px)";
+  top: "calc(50% - 18px)";
   opacity: 0.2;
   display: block;
   -ms-zoom: 2;
   -o-transform: scale(2);
   -moz-transform: scale(2);
   -webkit-transform: scale(2);
-  content: url("");
 }
 
 /* This is a masking container for the zoomed iframe element */

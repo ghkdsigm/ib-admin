@@ -271,8 +271,8 @@ export default {
 }
 .previewPop {
   position: fixed;
-  left: 565px;
-  top: 135px;
+  left: calc(50% - 385px);
+  top: 160px;
   width: 1200px;
   height: 78vh;
   overflow: hidden;

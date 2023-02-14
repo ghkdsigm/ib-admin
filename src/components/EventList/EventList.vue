@@ -13,9 +13,7 @@
           {{ item }}
         </li>
       </ul>
-      <Search
-
-      />
+      <Search />
     </div>
     <EventTable
       v-if="selectedTab.length > 0"
@@ -26,9 +24,9 @@
 </template>
 
 <script>
-import EventTable from '@/components/eventlist/EventTable';
-import data from '@/api/data.json';
-import Search from '@/components/search/SearchForm';
+import EventTable from "@/components/eventlist/EventTable";
+import data from "@/api/data.json";
+import Search from "@/components/search/SearchForm";
 
 export default {
   components: {
@@ -41,7 +39,7 @@ export default {
       eventTab: Object.keys(data),
       selectedTab: [],
       isActive: false,
-      categoryList: []
+      categoryList: [],
     };
   },
   created() {
@@ -57,7 +55,7 @@ export default {
     const lastTab = this.$refs.tab;
     lastTab.forEach((v, i) => {
       if (lastTab.length - 1 === i) {
-        lastTab[i].classList.add('on');
+        lastTab[i].classList.add("on");
       }
     });
   },
@@ -70,9 +68,9 @@ export default {
       const tab = this.$refs.tab;
       tab.map((v, i) => {
         if (i === tabIndex) {
-          tab[i].classList.add('on');
+          tab[i].classList.add("on");
         } else {
-          tab[i].classList.remove('on');
+          tab[i].classList.remove("on");
         }
       });
     },

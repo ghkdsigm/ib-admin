@@ -1,7 +1,7 @@
 <template>
   <div class="tableWrap">
     <table v-if="selectedTab[0] !== ''">
-      <colgroup>      
+      <colgroup>
         <col width="10%" />
         <col width="15%" />
         <col width="20%" />
@@ -26,9 +26,21 @@
       <tbody>
         <tr v-for="(item, index) in selectedTab" :key="index">
           <td>
-            <div class="thumbnail-container previewWrapper" title="Thumbnail Image of designcode.io" @click="doMouseOver(localUrl + item.localPageUrl)">
+            <div
+              class="thumbnail-container previewWrapper"
+              title="Thumbnail Image of designcode.io"
+              @click="doMouseOver(localUrl + item.localPageUrl)"
+            >
               <div class="thumbnail">
-                <iframe :src="item.localPageUrl !== '' ?  localUrl + item.localPageUrl : item.pageUrl" frameborder="0" onload="this.style.opacity = 1"></iframe>
+                <iframe
+                  :src="
+                    item.localPageUrl !== ''
+                      ? localUrl + item.localPageUrl
+                      : item.pageUrl
+                  "
+                  frameborder="0"
+                  onload="this.style.opacity = 1"
+                ></iframe>
               </div>
             </div>
           </td>
@@ -124,8 +136,8 @@
 </template>
 
 <script>
-import Iframe from '@/components/iframe/Iframe';
-import EventPop from '@/components/common/EventDetailPop';
+import Iframe from "@/components/iframe/Iframe";
+import EventPop from "@/components/common/EventDetailPop";
 
 export default {
   props: {
@@ -135,11 +147,11 @@ export default {
   data() {
     return {
       preview: this.selectedTab,
-      selpreview: '',
-      selPageUrl: '',
+      selpreview: "",
+      selPageUrl: "",
       detailInfo: {},
-      url: '',
-      localUrl: 'http://jbiz.itembay.co.kr/'
+      url: "",
+      localUrl: "http://jbiz.itembay.co.kr/",
     };
   },
   components: {
@@ -150,14 +162,14 @@ export default {
   methods: {
     doMouseOver(e) {
       this.$nextTick(() => {
-        const target = document.querySelector('.previewPop');
+        const target = document.querySelector(".previewPop");
         this.selPageUrl = e;
-        target.style.display = 'block';
+        target.style.display = "block";
       });
     },
     fullpage() {
       this.$nextTick(() => {
-        const doc = document.querySelector('.previewPop');
+        const doc = document.querySelector(".previewPop");
         if (doc.requestFullscreen) doc.requestFullscreen();
         else if (doc.webkitRequestFullscreen)
           // Chrome, Safari (webkit)
@@ -172,9 +184,9 @@ export default {
     },
     closePreviewPop(e) {
       this.$nextTick(() => {
-        const doc = document.querySelector('.previewPop');
+        const doc = document.querySelector(".previewPop");
         const target = e.target.parentElement.parentElement;
-        target.style.display = 'none';
+        target.style.display = "none";
         if (doc.requestFullscreen) {
           if (document.exitFullscreen) document.exitFullscreen();
           else if (document.webkitExitFullscreen)
@@ -192,18 +204,18 @@ export default {
     closeDetailPop(e) {
       this.$nextTick(() => {
         const target = e.target.parentElement;
-        target.style.display = 'none';
+        target.style.display = "none";
       });
     },
     eventDetail(e) {
       this.detailInfo = e;
 
-      console.log('bb', this.detailInfo);
+      console.log("bb", this.detailInfo);
 
       this.$nextTick(() => {
-        const target = document.querySelector('.layer-wrap');
+        const target = document.querySelector(".layer-wrap");
         // const el = e.currentTarget.parentElement
-        target.style.display = 'flex';
+        target.style.display = "flex";
       });
     },
   },
@@ -270,7 +282,7 @@ export default {
   height: 1000px;
 }
 .previewPop {
-  position: fixed; 
+  position: fixed;
   left: calc(50% - 385px);
   top: 160px;
   width: 1200px;
@@ -345,11 +357,11 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);  
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 3;
 }
 .layer-wrap:before {
-  content: '';
+  content: "";
   display: flex;
   height: 100%;
   vertical-align: middle;
@@ -380,11 +392,7 @@ a.btn-layerClose {
   line-height: 25px;
   text-decoration: none;
 }
-
-
 /* 썸네일 */
-
-/* This container helps the thumbnail behave as if it were an unscaled IMG element */
 .thumbnail-container {
   width: calc(800px * 0.25);
   height: calc(400px * 0.25);
@@ -396,7 +404,7 @@ a.btn-layerClose {
   z-index: 0;
 }
 .thumbnail-containe:hover {
-  cursor:pointer;
+  cursor: pointer;
   border: 2px solid red;
 }
 
@@ -425,11 +433,11 @@ a.btn-layerClose {
 }
 
 /* This is our screen sizing */
-.thumbnail, .thumbnail iframe {
+.thumbnail iframe {
   width: 1000px;
   height: 600px;
   bottom: 25px;
-  left:-23px;
+  left: -23px;
   position: relative;
 }
 

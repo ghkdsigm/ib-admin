@@ -1,38 +1,37 @@
 <template>
   <div class="tableWrap">
     <table v-if="selectedTab[0] !== ''">
-      <colgroup>
-        <col width="15%" />
-        <col width="15%" />
-        <col width="15%" />
-        <col width="5%" />
-        <col width="15%" />
+      <colgroup>      
         <col width="10%" />
+        <col width="15%" />
+        <col width="20%" />
+        <col width="20%" />
+        <col width="18%" />
+        <col width="7%" />
         <col width="5%" />
         <col width="5%" />
-        <col width="5%" />
-        <col width="5%" />
-        <!-- <col width="10%">
-            <col width="10%"> -->
       </colgroup>
       <thead>
-        <tr>
+        <tr class="tbHeader">
+          <th>썸네일</th>
           <th>카테고리</th>
           <th>이름</th>
           <th>내용</th>
-          <th>코드</th>
-          <th>소스위치</th>
           <th>기능</th>
-          <th>미리보기</th>
-          <th>바로가기</th>
+          <th>실서버</th>
           <th>일감</th>
-          <th>Detail</th>
-          <!-- <th>sp</th>
-                <th>비고</th> -->
+          <th>상세</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(item, index) in selectedTab" :key="index">
+          <td>
+            <div class="thumbnail-container previewWrapper" title="Thumbnail Image of designcode.io" @click="doMouseOver(localUrl + item.localPageUrl)">
+              <div class="thumbnail">
+                <iframe :src="item.localPageUrl !== '' ?  localUrl + item.localPageUrl : item.pageUrl" frameborder="0" onload="this.style.opacity = 1"></iframe>
+              </div>
+            </div>
+          </td>
           <td style="color: #4463d5">
             {{ item.category.name }}
           </td>
@@ -43,36 +42,17 @@
             {{ item.content }}
           </td>
           <td>
-            {{ item.code }}
-          </td>
-          <td>
-            {{ item.place }}
-          </td>
-          <td>
             {{ item.function }}
           </td>
           <td>
-            <div class="previewWrap" @click="doMouseOver(item.pageUrl)">
-              <a href="javascript:;">미리보기</a>
-            </div>
-          </td>
-          <td>
-            <a :href="item.pageUrl" target="_blank">index.html</a>
+            <a :href="item.pageUrl" target="_blank">바로가기</a>
           </td>
           <td>
             <a :href="item.workUrl" target="_blank">redmine</a>
           </td>
           <td>
-            <a href="javascript:;" @click="eventDetail(item)">자세히</a>
+            <a href="javascript:;" @click="eventDetail(item)">보기</a>
           </td>
-          <!--<td>
-                    <ul>
-                        <li v-for="(sp, i) in item.tableSp.newSp" :key="i">
-                            {{sp}}
-                        </li>
-                    </ul>
-                </td>      
-                <td>{{item.etc}}</td>           -->
         </tr>
       </tbody>
     </table>
@@ -125,11 +105,6 @@
       </div>
       <Iframe :sel-page-url="selPageUrl" />
     </div>
-    <!-- <div class="eventDetailPop" v-if="this.detailInfo !== ''">
-        <div class="popBg"></div>
-        <button @click="closeDetailPop">X</button>
-        <EventPop :detail-info="detailInfo"/>
-    </div> -->
 
     <div id="layer" class="layer-wrap">
       <a href="#" class="btn-layerClose" @click="closeDetailPop"
@@ -162,8 +137,9 @@ export default {
       preview: this.selectedTab,
       selpreview: '',
       selPageUrl: '',
-      detailInfo: [],
+      detailInfo: {},
       url: '',
+      localUrl: 'http://jbiz.itembay.co.kr/'
     };
   },
   components: {
@@ -173,16 +149,11 @@ export default {
   mounted() {},
   methods: {
     doMouseOver(e) {
-      // const target = document.querySelector(`.area${e}`)
-      // target.classList.add('selectedFrame')
       this.$nextTick(() => {
         const target = document.querySelector('.previewPop');
         this.selPageUrl = e;
         target.style.display = 'block';
       });
-      //const eachFrame = e.target;
-      //console.log(eachFrame)
-      //eachFrame.classList.add('selectedFrame')
     },
     fullpage() {
       this.$nextTick(() => {
@@ -225,7 +196,7 @@ export default {
       });
     },
     eventDetail(e) {
-      this.detailInfo = Object.entries({}, e);
+      this.detailInfo = e;
 
       console.log('bb', this.detailInfo);
 
@@ -246,6 +217,7 @@ export default {
 }
 .tableWrap table {
   margin: 0 auto;
+  min-width: 1200px;
 }
 .tableWrap table th {
   border-bottom: 1px solid rgb(230, 230, 230);
@@ -267,9 +239,9 @@ export default {
 }
 .tableWrap table tbody tr td {
   vertical-align: inherit;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   font-size: 0.8em;
-  padding: 5px 6px 5px 6px;
+  padding: 2px 6px 2px 6px;
   height: 22px;
   font-size: 0.75em;
   font-weight: 400;
@@ -278,6 +250,11 @@ export default {
 }
 .tableWrap table tbody tr td a {
   text-decoration: none;
+}
+.tbHeader {
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .area {
 }
@@ -294,8 +271,8 @@ export default {
 }
 .previewPop {
   position: fixed;
-  right: 535px;
-  top: 125px;
+  left: 565px;
+  top: 135px;
   width: 1200px;
   height: 78vh;
   overflow: hidden;
@@ -304,11 +281,18 @@ export default {
   border: 1px solid #ccc;
   background: #fff;
   box-shadow: 2px 2px 10px #727272;
+  z-index: 9999;
+  border-radius: 5px;
 }
 .previewWrap {
   display: flex;
   height: 40px;
   align-items: center;
+  border: 2px solid transparent;
+}
+.previewWrapper:hover {
+  cursor: pointer;
+  border: 2px solid #4463d5;
 }
 .previewPop button {
   width: 50%;
@@ -328,9 +312,6 @@ export default {
 }
 .previewPop button:hover {
   cursor: pointer;
-}
-.previewWrap {
-  z-index: 9999;
 }
 .eventDetailPop {
   position: absolute;
@@ -364,7 +345,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);  
+  z-index: 3;
 }
 .layer-wrap:before {
   content: '';
@@ -383,6 +365,7 @@ export default {
   border: 5px solid #3571b5;
   z-index: 10;
   font-family: Tahoma;
+  border-radius: 10px;
 }
 .pop-layer .pop-container {
   padding: 20px 25px;
@@ -391,11 +374,81 @@ a.btn-layerClose {
   display: flex;
   height: 25px;
   padding: 5px 14px;
-  border: 1px solid #304a8a;
-  background-color: #3f5a9d;
+  background-color: #000;
   font-size: 13px;
   color: #fff;
   line-height: 25px;
   text-decoration: none;
+}
+
+
+/* 썸네일 */
+
+/* This container helps the thumbnail behave as if it were an unscaled IMG element */
+.thumbnail-container {
+  width: calc(800px * 0.25);
+  height: calc(400px * 0.25);
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  background: #f9f9f9;
+  border: 2px solid transparent;
+  z-index: 0;
+}
+.thumbnail-containe:hover {
+  cursor:pointer;
+  border: 2px solid red;
+}
+
+/* Image Icon for the Background */
+.thumbnail-container::before {
+  position: absolute;
+  left: ~"calc(50% - 16px)";
+  top: ~"calc(50% - 18px)";
+  opacity: 0.2;
+  display: block;
+  -ms-zoom: 2;
+  -o-transform: scale(2);
+  -moz-transform: scale(2);
+  -webkit-transform: scale(2);
+  content: url("");
+}
+
+/* This is a masking container for the zoomed iframe element */
+.thumbnail {
+  -ms-zoom: 0.25;
+  -moz-transform: scale(0.26);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.26);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.26);
+  -webkit-transform-origin: 0 0;
+}
+
+/* This is our screen sizing */
+.thumbnail, .thumbnail iframe {
+  width: 1000px;
+  height: 600px;
+  bottom: 25px;
+  left:-23px;
+  position: relative;
+}
+
+/* This facilitates the fade-in transition instead of flicker. It also helps us maintain the illusion that this is an image, since some webpages will have a preloading animation or wait for some images to download */
+.thumbnail iframe {
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}
+
+/* This pseudo element masks the iframe, so that mouse wheel scrolling and clicking do not affect the simulated "screenshot" */
+.thumbnail:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: scroll;
 }
 </style>

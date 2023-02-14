@@ -1,19 +1,22 @@
 <!-- eslint-disable vue/valid-v-for -->
 <template>
   <div>
-    <ul class="eventTab">
-      <li
-        v-for="(item, index) in eventTab"
-        :key="index"
-        @click="tabBt(item, index)"
-        ref="tab"
-      >
-        {{ item }}
-      </li>
-    </ul>
-    <Search
+    <h3>아이템베이 이벤트 프로모션 레퍼런스 페이지</h3>
+    <div class="eventSearchWrap">
+      <ul class="eventTab">
+        <li
+          v-for="(item, index) in eventTab"
+          :key="index"
+          @click="tabBt(item, index)"
+          ref="tab"
+        >
+          {{ item }}
+        </li>
+      </ul>
+      <Search
 
-    />
+      />
+    </div>
     <EventTable
       v-if="selectedTab.length > 0"
       :selected-tab="selectedTab"
@@ -78,6 +81,13 @@ export default {
 </script>
 
 <style>
+.eventSearchWrap {
+  display: flex;
+  max-width: 1200px;
+  margin: 15px auto;
+  align-items: center;
+  justify-content: space-between;
+}
 .eventTab li {
   display: inline-block;
   margin: 0 15px;

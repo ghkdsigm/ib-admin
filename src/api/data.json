@@ -23,7 +23,60 @@
         "name": "게임 전용 쿠폰팩 지급"
       },
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",
+      "localPageUrl": "/resources/event/2022/1229_dk/index.html"
+    },
+    {
+      "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
+      "content": "이벤트 기간 동안 추가 마일리지가 적립되는 이벤트",
+      "code": "1389",
+      "place": "WEB-INF\\view_event\\20221205_tosspay",
+      "function": "마일리지 충전 하기",
+      "pageUrl": "https://www.itembay.com/evt/com/2022/0822_DKMobileTheOrigin/DKMobileTheOrigin",
+      "workUrl": "http://redmine.itembay.co.kr/issues/9774",
+      "tableSp": {
+        "newTable": "",
+        "newSp": [
+          "up_Event_202211FIFA2022_GetCompetitionDate -- 경기 일자 조회",
+          "up_Event_202211FIFA2022_ArrCommentList -- 댓글 조회",
+          "up_Event_202211FIFA2022_AddComment -- 댓글 입력",
+          "up_Event_202211FIFA2022_CommentCheck -- 댓글 삭제"
+        ],
+        "editSp": ""
+      },
+      "category": {
+        "id": 2234,
+        "name": "게임 전용 쿠폰팩 지급"
+      },
+      "seaseon": "정기",
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",
+      "localPageUrl": "/resources/event/2022/1230_payBack/index.html"
+    },
+    {
+      "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
+      "content": "이벤트 기간 동안 추가 마일리지가 적립되는 이벤트",
+      "code": "1389",
+      "place": "WEB-INF\\view_event\\20221205_tosspay",
+      "function": "마일리지 충전 하기",
+      "pageUrl": "https://www.itembay.com/evt/com/2022/0822_DKMobileTheOrigin/DKMobileTheOrigin",
+      "workUrl": "http://redmine.itembay.co.kr/issues/9774",
+      "tableSp": {
+        "newTable": "",
+        "newSp": [
+          "up_Event_202211FIFA2022_GetCompetitionDate -- 경기 일자 조회",
+          "up_Event_202211FIFA2022_ArrCommentList -- 댓글 조회",
+          "up_Event_202211FIFA2022_AddComment -- 댓글 입력",
+          "up_Event_202211FIFA2022_CommentCheck -- 댓글 삭제"
+        ],
+        "editSp": ""
+      },
+      "category": {
+        "id": 2234,
+        "name": "게임 전용 쿠폰팩 지급"
+      },
+      "seaseon": "정기",
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",
+      "localPageUrl": "/resources/event/2022/1205_toss/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작333",
@@ -49,7 +102,8 @@
         "name": "사전예약"
       },      
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/1121_fifa/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작333",
@@ -75,7 +129,8 @@
         "name": "열쇠지급"
       },  
       "seaseon": "비정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/1104_diablo2/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
@@ -101,7 +156,8 @@
         "name": "응모권지급"
       },  
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/1013_dk/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
@@ -127,7 +183,8 @@
         "name": "뽑기권"
       },  
       "seaseon": "비정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/1007_diablo2/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
@@ -153,7 +210,8 @@
         "name": "사전예약"
       },  
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/1001_odin_hit2/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
@@ -179,7 +237,8 @@
         "name": "사전예약"
       },  
       "seaseon": "비정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/0929_dk/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
@@ -205,7 +264,8 @@
         "name": "사전예약"
       },  
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/1004_lngm/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
@@ -231,7 +291,8 @@
         "name": "사전예약"
       },  
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/0908_chuseok/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
@@ -257,7 +318,8 @@
         "name": "사전예약"
       },  
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/0830_bloodpledgem/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
@@ -283,7 +345,8 @@
         "name": "사전예약"
       },  
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/0831_maplestory/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
@@ -309,7 +372,8 @@
         "name": "물품 경매"
       },  
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/0912_friend/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
@@ -335,7 +399,8 @@
         "name": "사전예약"
       },  
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/0825_baygle/index.html"
     }
   ],
   "2022": [
@@ -363,7 +428,8 @@
         "name": "무기판매"
       },  
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/0803_dk/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작222",
@@ -389,7 +455,8 @@
         "name": "복주머니"
       },  
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/0803_dk/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작222",
@@ -415,7 +482,8 @@
         "name": "로또"
       },  
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/0803_dk/index.html"
     }
   ],
   "2021": [
@@ -443,7 +511,8 @@
         "name": "무기판매"
       },  
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/0803_dk/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작222",
@@ -469,7 +538,8 @@
         "name": "복주머니"
       },  
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/0803_dk/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작222",
@@ -495,7 +565,8 @@
         "name": "로또"
       },  
       "seaseon": "정기",
-      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트"
+      "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
+      "localPageUrl": "/resources/event/2022/0803_dk/index.html"
     }
   ]
 }

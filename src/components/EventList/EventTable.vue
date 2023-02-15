@@ -28,7 +28,6 @@
           <td>
             <div
               class="thumbnail-container previewWrapper"
-              title="Thumbnail Image of designcode.io"
               @click="doMouseOver(localUrl + item.localPageUrl)"
             >
               <div class="thumbnail">
@@ -44,8 +43,9 @@
               </div>
             </div>
           </td>
-          <td style="color: #4463d5">
+          <td class="CellWithComment" style="color: #4463d5">
             {{ item.category.name }}
+            <span class="CellComment">{{ item.seaseon }}</span>
           </td>
           <td>
             {{ item.name }}
@@ -138,6 +138,7 @@
 <script>
 import Iframe from "@/components/iframe/Iframe.vue";
 import EventPop from "@/components/common/EventDetailPop.vue";
+import { listenerCount } from "process";
 
 export default {
   props: {
@@ -304,6 +305,9 @@ export default {
   cursor: pointer;
   border: 2px solid #4463d5;
 }
+.previewWrapper:hover .thumbnail {
+  filter: grayscale(0%) contrast(1) brightness(100%);
+}
 .previewPop button {
   width: 50%;
   height: 100%;
@@ -390,6 +394,32 @@ a.btn-layerClose {
   line-height: 25px;
   text-decoration: none;
 }
+
+/*툴팁*/
+.CellWithComment {
+  position: relative;
+}
+
+.CellComment {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  border: 1px;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: red;
+  padding: 3px;
+  color: red;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.CellWithComment:hover span.CellComment {
+  display: block;
+}
+
 /* 썸네일 */
 .thumbnail-container {
   width: calc(800px * 0.25);
@@ -430,6 +460,10 @@ a.btn-layerClose {
   -webkit-transform-origin: 0 0;
   width: 800px;
   height: 400px;
+  filter: grayscale(50%) contrast(1) brightness(90%);
+}
+.thumbnail.on {
+  filter: grayscale(0%) contrast(1) brightness(100%);
 }
 
 /* This is our screen sizing */

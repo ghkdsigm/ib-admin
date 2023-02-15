@@ -151,7 +151,7 @@ export default {
       selPageUrl: "",
       detailInfo: {},
       url: "",
-      localUrl: "http://jbiz.itembay.co.kr/",
+      localUrl: "http://design2.itembay.co.kr/",
     };
   },
   components: {

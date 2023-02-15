@@ -136,8 +136,8 @@
 </template>
 
 <script>
-import Iframe from "@/components/iframe/Iframe";
-import EventPop from "@/components/common/EventDetailPop";
+import Iframe from "@/components/iframe/Iframe.vue";
+import EventPop from "@/components/common/EventDetailPop.vue";
 
 export default {
   props: {
@@ -267,8 +267,6 @@ export default {
   position: sticky;
   top: 0;
   z-index: 1;
-}
-.area {
 }
 .area > iframe {
   width: 300px;
@@ -430,8 +428,8 @@ a.btn-layerClose {
   -o-transform-origin: 0 0;
   -webkit-transform: scale(0.26);
   -webkit-transform-origin: 0 0;
-  width:800px;
-  height:400px;
+  width: 800px;
+  height: 400px;
 }
 
 /* This is our screen sizing */

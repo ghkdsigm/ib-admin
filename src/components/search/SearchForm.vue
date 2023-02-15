@@ -4,7 +4,7 @@
       class="search-input"
       type="text"
       placeholder="카테고리, 이벤트명으로 검색 하실 수 있습니다."
-    />    
+    />
     <!-- <ul class="group-list">
       <li class="group-list-header">
         <span>카테고리</span>
@@ -19,16 +19,14 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style scoped>
 .searchWrap input {
-  padding:10px;
-  min-width:300px;
+  padding: 10px;
+  min-width: 300px;
   border-radius: 5px;
-  border:1px solid #ccc;
+  border: 1px solid #ccc;
 }
 </style>

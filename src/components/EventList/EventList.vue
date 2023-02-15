@@ -133,6 +133,10 @@ export default {
   margin: 15px auto;
   align-items: center;
   justify-content: space-between;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 9;
 }
 .eventTab li {
   display: inline-block;

@@ -267,7 +267,7 @@ export default {
 }
 .tbHeader {
   position: sticky;
-  top: 0;
+  top: 50px;
   z-index: 1;
 }
 .area > iframe {

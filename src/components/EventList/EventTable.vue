@@ -430,6 +430,8 @@ a.btn-layerClose {
   -o-transform-origin: 0 0;
   -webkit-transform: scale(0.26);
   -webkit-transform-origin: 0 0;
+  width:800px;
+  height:400px;
 }
 
 /* This is our screen sizing */
@@ -437,7 +439,7 @@ a.btn-layerClose {
   width: 1000px;
   height: 600px;
   bottom: 25px;
-  left: -23px;
+  left: -105px;
   position: relative;
 }
 

@@ -24,9 +24,9 @@
 </template>
 
 <script>
-import EventTable from "@/components/eventlist/EventTable.vue";
+import EventTable from "@/components/eventlist/EventTable";
 import data from "@/api/data.json";
-import Search from "@/components/search/SearchForm.vue";
+import Search from "@/components/search/SearchForm";
 
 export default {
   components: {

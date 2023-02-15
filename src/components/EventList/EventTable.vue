@@ -231,6 +231,7 @@ export default {
 .tableWrap table {
   margin: 0 auto;
   min-width: 1200px;
+  max-width: 1200px;
 }
 .tableWrap table th {
   border-bottom: 1px solid rgb(230, 230, 230);

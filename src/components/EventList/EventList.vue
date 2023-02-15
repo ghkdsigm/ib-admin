@@ -14,6 +14,11 @@
         </li>
       </ul>
       <Search />
+      <div style="display: flex; width: 196px; justify-content: flex-end">
+        <button type="button" @click="excelDown()" class="excelBt">
+          엑셀 다운로드
+        </button>
+      </div>
     </div>
     <EventTable
       v-if="selectedTab.length > 0"
@@ -27,6 +32,7 @@
 import EventTable from "@/components/eventlist/EventTable";
 import data from "@/api/data.json";
 import Search from "@/components/search/SearchForm";
+import XLSX from "xlsx";
 
 export default {
   components: {
@@ -35,6 +41,7 @@ export default {
   },
   data() {
     return {
+      excel: [],
       eventList: data,
       eventTab: Object.keys(data),
       selectedTab: [],
@@ -74,6 +81,47 @@ export default {
         }
       });
     },
+    excelDown() {
+      for (const excel of this.selectedTab) {
+        const excelLogs = {
+          category: {},
+          code: "",
+          content: "",
+          etc: "",
+          function: "",
+          localPageUrl: "",
+          name: "",
+          pageUrl: "",
+          place: "",
+          seaseon: "",
+          tableSp: "",
+          workUrl: "",
+        };
+        excelLogs.category = excel.category.name;
+        excelLogs.code = excel.code;
+        excelLogs.content = excel.content;
+        excelLogs.etc = excel.etc;
+        excelLogs.function = excel.function;
+        excelLogs.localPageUrl = excel.localPageUrl;
+        excelLogs.name = excel.name;
+        excelLogs.pageUrl = excel.pageUrl;
+        excelLogs.place = excel.place;
+        excelLogs.seaseon = excel.seaseon;
+        excelLogs.tableSp = excel.newSp;
+        excelLogs.workUrl = excel.workUrl;
+
+        this.excel.push(excelLogs);
+      }
+
+      // 엑셀 워크시트로 json 내보내기, 배열만 가능
+      const dataWS = XLSX.utils.json_to_sheet(this.excel);
+      // 엑셀의 workbook(엑셀파일에 지정된 이름)을 만든다
+      const wb = XLSX.utils.book_new();
+      // workbook에 워크시트 추가, 시트명은 'peopleData'
+      XLSX.utils.book_append_sheet(wb, dataWS, "peopleData");
+      // 엑셀 파일을 내보낸다. 엑셀 파일 저장명은 'people.xlsx'
+      XLSX.writeFile(wb, "infinitychallenge.xlsx");
+    },
   },
 };
 </script>
@@ -100,5 +148,16 @@ export default {
 .eventTab li:hover {
   color: #4463d5;
   font-weight: bold;
+}
+.excelBt {
+  color: #fff;
+  background-color: #9da0ab;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 5px;
+}
+.excelBt:hover {
+  cursor: pointer;
+  background-color: #34406a;
 }
 </style>

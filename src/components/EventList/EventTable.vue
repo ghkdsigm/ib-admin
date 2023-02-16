@@ -1,6 +1,6 @@
 <template>
   <div class="tableWrap">
-    <table v-if="selectedTab[0] !== ''">
+    <table v-if="check_searchVal === ''" class="11">
       <colgroup>
         <col width="10%" />
         <col width="15%" />
@@ -68,20 +68,57 @@
         </tr>
       </tbody>
     </table>
-    <table v-else>
+    <table v-else-if="check_searchVal !== ''" class="22">
+      <colgroup>
+        <col width="10%" />
+        <col width="15%" />
+        <col width="20%" />
+        <col width="20%" />
+        <col width="18%" />
+        <col width="7%" />
+        <col width="5%" />
+        <col width="5%" />
+      </colgroup>
       <thead>
-        <tr>
-          <th>1depth</th>
-          <th>2depth</th>
-          <th>Link</th>
-          <th>작업일</th>
-          <th>업데이트일</th>
-          <th>작업일</th>
-          <th>업데이트일</th>
+        <tr class="tbHeader">
+          <th>썸네일</th>
+          <th>카테고리</th>
+          <th>이름</th>
+          <th>내용</th>
+          <th>기능</th>
+          <th>실서버</th>
+          <th>일감</th>
+          <th>상세</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, index) in defaultSelectTab" :key="index">
+        <tr
+          v-for="(item, index) in selectedTab"
+          :key="index"
+          class="group-item"
+        >
+          <td>
+            <div
+              class="thumbnail-container previewWrapper"
+              @click="doMouseOver(localUrl + item.localPageUrl)"
+            >
+              <div class="thumbnail">
+                <iframe
+                  :src="
+                    item.localPageUrl !== ''
+                      ? localUrl + item.localPageUrl
+                      : item.pageUrl
+                  "
+                  frameborder="0"
+                  onload="this.style.opacity = 1"
+                ></iframe>
+              </div>
+            </div>
+          </td>
+          <td class="CellWithComment" style="color: #4463d5">
+            {{ item.category.name }}
+            <span class="CellComment">{{ item.seaseon }}</span>
+          </td>
           <td>
             {{ item.name }}
           </td>
@@ -89,23 +126,16 @@
             {{ item.content }}
           </td>
           <td>
-            {{ item.place }}
-          </td>
-          <td>
             {{ item.function }}
           </td>
           <td>
-            {{ item.pageUrl }}
+            <a :href="item.pageUrl" target="_blank">바로가기</a>
           </td>
           <td>
-            {{ item.workUrl }}
+            <a :href="item.workUrl" target="_blank">redmine</a>
           </td>
           <td>
-            <ul>
-              <li v-for="(sp, i) in item.tableSp.newSp" :key="i">
-                {{ sp }}
-              </li>
-            </ul>
+            <a href="javascript:;" @click="eventDetail(item)">보기</a>
           </td>
         </tr>
       </tbody>
@@ -138,7 +168,6 @@
 <script>
 import Iframe from "@/components/iframe/Iframe.vue";
 import EventPop from "@/components/common/EventDetailPop.vue";
-import { listenerCount } from "process";
 
 export default {
   props: {
@@ -153,13 +182,37 @@ export default {
       detailInfo: {},
       url: "",
       localUrl: "http://design2.itembay.co.kr/",
+      searchVal: "",
+      searchListNum: "",
     };
   },
   components: {
     Iframe,
     EventPop,
   },
-  mounted() {},
+  mounted() {
+    this.searchListNum = this.$store.state.searchList;
+    //this.searchVal = this.$store.state.searchVal;
+    //console.log(this.searchVal);
+  },
+  computed: {
+    check_searchVal() {
+      return this.$store.state.searchVal;
+    },
+  },
+  watch: {
+    check_searchVal(val) {
+      this.searchVal = val;
+      if (this.searchVal !== "") {
+        this.searchWord(this.searchVal);
+      } else {
+        for (let i = 0; i < this.searchListNum; i++) {
+          document.querySelectorAll(".group-item")[i].style.display =
+            "table-row";
+        }
+      }
+    },
+  },
   methods: {
     doMouseOver(e) {
       this.$nextTick(() => {
@@ -214,6 +267,18 @@ export default {
         const target = document.querySelector(".layer-wrap");
         // const el = e.currentTarget.parentElement
         target.style.display = "flex";
+      });
+    },
+    searchWord(event) {
+      this.$nextTick(() => {
+        for (let i = 0; i < this.searchListNum; i++) {
+          if (this.selectedTab[i].name.includes(event) === false) {
+            document.querySelectorAll(".group-item")[i].style.display = "none";
+          } else {
+            document.querySelectorAll(".group-item")[i].style.display =
+              "table-row";
+          }
+        }
       });
     },
   },

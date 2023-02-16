@@ -27,7 +27,7 @@
       "localPageUrl": "/resources/event/2022/1229_dk/index.html"
     },
     {
-      "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
+      "name": "모바일팝 22년 12월 추가 5% 적립 프로모션 진행의 건",
       "content": "이벤트 기간 동안 추가 마일리지가 적립되는 이벤트",
       "code": "1389",
       "place": "WEB-INF\\view_event\\20221205_tosspay",
@@ -53,7 +53,7 @@
       "localPageUrl": "/resources/event/2022/1230_payBack/index.html"
     },
     {
-      "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
+      "name": "시즈널2022 FIFA 카타르 월드컵 프로모션",
       "content": "이벤트 기간 동안 추가 마일리지가 적립되는 이벤트",
       "code": "1389",
       "place": "WEB-INF\\view_event\\20221205_tosspay",
@@ -79,8 +79,8 @@
       "localPageUrl": "/resources/event/2022/1205_toss/index.html"
     },
     {
-      "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작333",
-      "content": "이벤트 기간 동안 추가 마일리지가 적립되는 이벤트",
+      "name": "디아블로2 래더 시즌2 후속 프로모션",
+      "content": "사전예약을 통해 게임 전용 쿠폰팩 및 쿠폰을 지급하는 이벤트",
       "code": "1389",
       "place": "WEB-INF\\view_event\\20221205_tosspay",
       "function": "마일리지 충전 하기",
@@ -106,7 +106,7 @@
       "localPageUrl": "/resources/event/2022/1121_fifa/index.html"
     },
     {
-      "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작333",
+      "name": "<DK모바일 디오리진 시즌2> 제휴 오픈 프로모션",
       "content": "이벤트 기간 동안 추가 마일리지가 적립되는 이벤트",
       "code": "1389",
       "place": "WEB-INF\\view_event\\20221205_tosspay",
@@ -133,8 +133,8 @@
       "localPageUrl": "/resources/event/2022/1104_diablo2/index.html"
     },
     {
-      "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
-      "content": "이벤트 기간 동안 추가 마일리지가 적립되는 이벤트",
+      "name": "모바일 리니지 통합 프로모션",
+      "content": "강화권을 통해 무기를 강화하여 강화된 무기로 쿠폰 및 마일리지를 지급받는 이벤트",
       "code": "1389",
       "place": "WEB-INF\\view_event\\20221205_tosspay",
       "function": "마일리지 충전 하기",
@@ -160,8 +160,8 @@
       "localPageUrl": "/resources/event/2022/1013_dk/index.html"
     },
     {
-      "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
-      "content": "이벤트 기간 동안 추가 마일리지가 적립되는 이벤트",
+      "name": "오딘, 히트2 업데이트 대응 프로모션",
+      "content": "거래 패키지 받기를 통해 자동 응모 후 추첨을 통해서 구글 기프트카드를 지급하는 이벤트",
       "code": "1389",
       "place": "WEB-INF\\view_event\\20221205_tosspay",
       "function": "마일리지 충전 하기",
@@ -187,8 +187,8 @@
       "localPageUrl": "/resources/event/2022/1007_diablo2/index.html"
     },
     {
-      "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
-      "content": "이벤트 기간 동안 추가 마일리지가 적립되는 이벤트",
+      "name": "친구추천 캠페인 개발요청",
+      "content": "기존 회원이 초대코드를 생성하고, 초대코드를 통해 회원가입 사용자가 생길 시 두 회원에게 포인트 적립 및 쿠폰을 주는 이벤트",
       "code": "1389",
       "place": "WEB-INF\\view_event\\20221205_tosspay",
       "function": "마일리지 충전 하기",

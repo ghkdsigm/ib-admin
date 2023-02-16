@@ -4,6 +4,8 @@
       class="search-input"
       type="text"
       placeholder="카테고리, 이벤트명으로 검색 하실 수 있습니다."
+      v-model="writing"
+      @input="searchGroup(writing)"
     />
     <!-- <ul class="group-list">
       <li class="group-list-header">
@@ -15,11 +17,40 @@
         <span>{{ group.debut }}</span>
       </li>
     </ul> -->
+    <!-- <ul class="group-list">
+      <li class="group-list-header">
+        <span>그룹명</span>
+        <span>데뷔년도</span>
+        <span>멤버수</span>
+      </li>
+      <li v-for="(group, idx) in groupList" :key="idx" class="group-item">
+        <span>{{ group.name }}</span>
+      </li>
+    </ul> -->
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    selectedTab: Array,
+  },
+  data() {
+    return {
+      groupList: [],
+      writing: "",
+    };
+  },
+  mounted() {
+    this.groupList.push(...this.selectedTab);
+    this.$store.state.searchList = this.groupList.length;
+  },
+  methods: {
+    searchGroup(event) {
+      this.$store.dispatch("toggleStateUser", event);
+    },
+  },
+};
 </script>
 
 <style scoped>

@@ -13,7 +13,7 @@
           {{ item }}
         </li>
       </ul>
-      <Search />
+      <Search :selected-tab="selectedTab" />
       <div style="display: flex; width: 196px; justify-content: flex-end">
         <button type="button" @click="excelDown()" class="excelBt">
           엑셀 다운로드
@@ -56,7 +56,6 @@ export default {
       this.selectedTab.push(data[2023][i]);
     });
     this.isActive = true;
-    //console.log(data)
   },
   mounted() {
     const lastTab = this.$refs.tab;

@@ -15,7 +15,7 @@
         <tr class="tbHeader">
           <th>썸네일</th>
           <th>카테고리</th>
-          <th>이름</th>
+          <th>이벤트명</th>
           <th>내용</th>
           <th>기능</th>
           <th>실서버</th>
@@ -83,7 +83,7 @@
         <tr class="tbHeader">
           <th>썸네일</th>
           <th>카테고리</th>
-          <th>이름</th>
+          <th>이벤트명</th>
           <th>내용</th>
           <th>기능</th>
           <th>실서버</th>
@@ -272,7 +272,10 @@ export default {
     searchWord(event) {
       this.$nextTick(() => {
         for (let i = 0; i < this.searchListNum; i++) {
-          if (this.selectedTab[i].name.includes(event) === false) {
+          if (
+            this.selectedTab[i].name.includes(event) === false &&
+            this.selectedTab[i].category.name.includes(event) === false
+          ) {
             document.querySelectorAll(".group-item")[i].style.display = "none";
           } else {
             document.querySelectorAll(".group-item")[i].style.display =

@@ -210,9 +210,6 @@ export default {
     },
     eventDetail(e) {
       this.detailInfo = e;
-
-      console.log("bb", this.detailInfo);
-
       this.$nextTick(() => {
         const target = document.querySelector(".layer-wrap");
         // const el = e.currentTarget.parentElement

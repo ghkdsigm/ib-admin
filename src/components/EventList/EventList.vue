@@ -127,16 +127,20 @@ export default {
 </script>
 
 <style>
+h3 {
+  margin: 15px auto 0;
+}
 .eventSearchWrap {
   display: flex;
   max-width: 1200px;
-  margin: 15px auto;
+  margin: 0 auto;
   align-items: center;
   justify-content: space-between;
   background: #fff;
   position: sticky;
   top: 0;
   z-index: 9;
+  padding: 15px 0;
 }
 .eventTab li {
   display: inline-block;

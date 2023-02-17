@@ -2,6 +2,7 @@
   command = "npm run build"
   functions = "functions" # netlify dev uses this directory to scaffold and serve your functions
   publish = "dist"
+  environment = { NODE_VERSION = "16.14.0" }
 
 # note: each of these fields are OPTIONAL
 [dev]

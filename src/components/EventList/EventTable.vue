@@ -325,6 +325,9 @@ export default {
   text-indent: initial;
   border-spacing: 2px;
 }
+.tableWrap table tbody tr:nth-of-type(even) {
+  background-color: #f6f6f66e;
+}
 .tableWrap table tbody tr:hover {
   background: #f9f9f9;
 }

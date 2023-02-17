@@ -18,6 +18,9 @@
         <button type="button" @click="excelDown()" class="excelBt">
           엑셀 다운로드
         </button>
+        <button type="button" @click="excelDown()" class="excelBt">
+          레퍼런스 등록
+        </button>
       </div>
     </div>
     <EventTable

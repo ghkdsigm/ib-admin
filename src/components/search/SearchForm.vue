@@ -5,7 +5,7 @@
       type="text"
       placeholder="카테고리, 이벤트명으로 검색 하실 수 있습니다."
       v-model="writing"
-      @input="searchGroup(writing)"
+      @input="searchGroup(e)"
     />
     <!-- <ul class="group-list">
       <li class="group-list-header">
@@ -47,7 +47,8 @@ export default {
   },
   methods: {
     searchGroup(event) {
-      this.$store.dispatch("toggleStateUser", event);
+      this.writing = event;
+      this.$store.dispatch("toggleStateUser", this.writing);
     },
   },
 };

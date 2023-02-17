@@ -193,8 +193,6 @@ export default {
   },
   mounted() {
     this.searchListNum = this.$store.state.searchList;
-    //this.searchVal = this.$store.state.searchVal;
-    //console.log(this.searchVal);
   },
   computed: {
     check_searchVal() {

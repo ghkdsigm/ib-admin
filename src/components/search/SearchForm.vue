@@ -7,26 +7,6 @@
       :value="writing"
       @input="searchGroup"
     />
-    <!-- <ul class="group-list">
-      <li class="group-list-header">
-        <span>카테고리</span>
-        <span>이벤트명</span>
-      </li>
-      <li v-for="group in groupList" :key="group" class="group-item">
-        <span>{{ group.name }}</span>
-        <span>{{ group.debut }}</span>
-      </li>
-    </ul> -->
-    <!-- <ul class="group-list">
-      <li class="group-list-header">
-        <span>그룹명</span>
-        <span>데뷔년도</span>
-        <span>멤버수</span>
-      </li>
-      <li v-for="(group, idx) in groupList" :key="idx" class="group-item">
-        <span>{{ group.name }}</span>
-      </li>
-    </ul> -->
   </div>
 </template>
 

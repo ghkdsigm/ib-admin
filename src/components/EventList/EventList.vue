@@ -134,7 +134,7 @@ h3 {
   background: #fff;
   position: sticky;
   top: 0;
-  z-index: 9;
+  z-index: 3;
   padding: 15px 0;
 }
 .eventTab li {

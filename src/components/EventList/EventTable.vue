@@ -184,6 +184,7 @@ export default {
       localUrl: "http://design2.itembay.co.kr/",
       searchVal: "",
       searchListNum: "",
+      isActive: false,
     };
   },
   components: {
@@ -223,6 +224,7 @@ export default {
     },
     fullpage() {
       this.$nextTick(() => {
+        this.isActive = true;
         const doc = document.querySelector(".previewPop");
         if (doc.requestFullscreen) doc.requestFullscreen();
         else if (doc.webkitRequestFullscreen)
@@ -238,20 +240,30 @@ export default {
     },
     closePreviewPop(e) {
       this.$nextTick(() => {
-        const doc = document.querySelector(".previewPop");
-        const target = e.target.parentElement.parentElement;
-        target.style.display = "none";
-        if (doc.requestFullscreen) {
-          if (document.exitFullscreen) document.exitFullscreen();
-          else if (document.webkitExitFullscreen)
-            // Chrome, Safari (webkit)
-            document.webkitExitFullscreen();
-          else if (document.mozCancelFullScreen)
-            // Firefox
-            document.mozCancelFullScreen();
-          else if (document.msExitFullscreen)
-            // IE or Edge
-            document.msExitFullscreen();
+        if (this.isActive === true) {
+          const doc = document.querySelector(".previewPop");
+          const target = e.target.parentElement.parentElement;
+          target.style.display = "none";
+          if (doc.requestFullscreen) {
+            if (document.exitFullscreen) document.exitFullscreen();
+            else if (document.webkitExitFullscreen)
+              // Chrome, Safari (webkit)
+              document.webkitExitFullscreen();
+            else if (document.mozCancelFullScreen)
+              // Firefox
+              document.mozCancelFullScreen();
+            else if (document.msExitFullscreen)
+              // IE or Edge
+              document.msExitFullscreen();
+          }
+          this.isActive = false;
+        } else {
+          const doc = document.querySelector(".previewPop");
+          const target = e.target.parentElement.parentElement;
+          target.style.display = "none";
+          if (doc.requestFullscreen) {
+            if (doc.exitFullscreen) doc.exitFullscreen();
+          }
         }
       });
     },

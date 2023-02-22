@@ -24,7 +24,9 @@
         <button type="button" @click="excelDown()" class="excelBt">
           엑셀 다운로드
         </button>
-        <button type="button" class="excelBt">레퍼런스 등록</button>
+        <button type="button" class="excelBt" @click="registerRef">
+          레퍼런스 등록
+        </button>
       </div>
     </div>
     <EventTable
@@ -130,6 +132,17 @@ export default {
       this.loginActive = false;
       this.$store.dispatch("loginUser", false);
     },
+    registerRef() {
+      this.$nextTick(() => {
+        if (this.loginActive) {
+          this.$router.push("/register");
+        } else {
+          // eslint-disable-next-line no-alert
+          alert("로그인이 필요합니다.");
+          this.$router.push("/login");
+        }
+      });
+    },
   },
 };
 </script>
@@ -185,6 +198,8 @@ h3 .loginbt:hover {
   background-color: #9da0ab;
   border: 1px solid #eee;
   border-radius: 5px;
+  font-size: 13px;
+  text-decoration: none;
   padding: 5px;
 }
 .excelBt:hover {

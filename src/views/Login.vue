@@ -1,10 +1,7 @@
 <template>
   <div class="login-wrapper">
     <div class="content">
-      <h2>
-        아이템베이 레퍼런스 페이지<br />
-        로그인
-      </h2>
+      <h2 @click="toHome">레퍼런스 로그인</h2>
       <p>
         *아이템베이 이벤트 프로모션 레퍼런스 등록을 위한 로그인 화면입니다.<br />권한
         관련 문의는 담당 관리자에게 문의하세요
@@ -67,6 +64,9 @@ export default {
         alert("아이디 또는 패스워드를 입력해주세요!");
       }
     },
+    toHome() {
+      this.$router.push("/");
+    },
   },
   mounted() {
     this.loginActive = false;
@@ -97,6 +97,7 @@ h2 {
   font-size: 24px;
   color: #6A24FE;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 #loginForm input {
   width: 100%;
@@ -109,7 +110,7 @@ h2 {
   border: none;
 }
 
-#loginForm input:placeholder {
+#loginForm input::placeholder {
   color: #D2D2D2;
 }
 

@@ -81,6 +81,8 @@ export default {
 <style scoped>
 h4 {
   margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 table {
   min-width: 750px;

@@ -331,7 +331,7 @@ export default {
   background: #f9f9f9;
 }
 .tableWrap table tbody tr td {
-  vertical-align: inherit;
+  vertical-align: middle;
   /* white-space: nowrap; */
   font-size: 0.8em;
   padding: 2px 6px 2px 6px;
@@ -340,6 +340,7 @@ export default {
   font-weight: 400;
   text-align: center;
   border-bottom: 1px solid #eee;
+  font-family: "Noto Sans KR";
 }
 .tableWrap table tbody tr td a {
   text-decoration: none;

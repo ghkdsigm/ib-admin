@@ -248,6 +248,7 @@ h2 {
   font-size: 24px;
   color: #6a24fe;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 #loginForm input {
   width: 100%;

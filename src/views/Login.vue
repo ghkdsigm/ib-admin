@@ -94,7 +94,8 @@ export default {
   left: 0;
 }
 .login-wrapper .content p {
-  font-size: 12px;
+  font-size: 13px;
+  letter-spacing: -0.3px;
 }
 .login-wrapper .content p em {
   font-size: 10px;
@@ -111,6 +112,7 @@ h2 {
   font-size: 24px;
   color: #6a24fe;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 #loginForm input {
   width: 100%;

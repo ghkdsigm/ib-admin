@@ -19,6 +19,8 @@
 body {
   margin: 0;
   padding: 0;
+  line-height: 1.4;
+  font-family: "Noto Sans KR", sans-serif;
 }
 #nav {
   padding: 30px;
@@ -37,5 +39,19 @@ ul {
 }
 li {
   list-style: none;
+}
+
+a,
+button,
+li,
+span,
+td,
+th,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Noto Sans KR";
 }
 </style>

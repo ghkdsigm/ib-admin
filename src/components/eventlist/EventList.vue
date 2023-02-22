@@ -160,13 +160,16 @@ h3 {
   position: relative;
   align-items: center;
   width: 1200px;
+  font-weight: bold;
+  font-size: 17px;
+  color: rgb(68, 99, 213);
 }
 h3 .loginbt {
   text-decoration: none;
   position: absolute;
   right: 0;
   font-size: 14px;
-  font-weight: 100;
+  font-weight: 300;
 }
 h3 .loginbt:hover {
   color: #4463d5;
@@ -182,7 +185,7 @@ h3 .loginbt:hover {
   position: sticky;
   top: 0;
   z-index: 3;
-  padding: 15px 0;
+  padding: 22px 0;
 }
 .eventTab li {
   display: inline-block;

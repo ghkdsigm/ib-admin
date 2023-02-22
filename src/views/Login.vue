@@ -1,11 +1,12 @@
 <template>
   <div class="login-wrapper">
     <div class="content">
-      <h2 @click="toHome">레퍼런스 로그인</h2>
-      <p>
-        *아이템베이 이벤트 프로모션 레퍼런스 등록을 위한 로그인 화면입니다.<br />권한
-        관련 문의는 담당 관리자<em>(황승현대리/손정완주임)</em>에게 문의하세요
-      </p>
+      <img
+        src="https://www.itembaycorp.com/resources/images/common/ico_logo.png"
+        alt="아이템베이 로고"
+        @click="toHome"
+      />
+      <h2>레퍼런스 로그인</h2>
       <div id="loginForm">
         <form @submit.prevent="fnLogin">
           <p>
@@ -29,6 +30,11 @@
             <button type="submit" class="button w3-green w3-round">
               로그인
             </button>
+          </p>
+          <p>
+            *아이템베이 이벤트 프로모션 레퍼런스 등록을 위한 로그인
+            화면입니다.<br />권한 관련 문의는 담당
+            관리자<em>(황승현대리/손정완주임)</em>에게 문의하세요
           </p>
         </form>
       </div>
@@ -98,11 +104,13 @@ export default {
 #loginForm {
   margin: auto;
 }
+.content > img {
+  cursor: pointer;
+}
 h2 {
   font-size: 24px;
   color: #6A24FE;
   margin-bottom: 20px;
-  cursor: pointer;
 }
 #loginForm input {
   width: 100%;
@@ -111,7 +119,7 @@ h2 {
   box-sizing: border-box;
   margin-bottom: 16px;
   border-radius: 6px;
-  background-color: #F8F8F8;
+  background-color: #f3f3f3;
   border: none;
 }
 

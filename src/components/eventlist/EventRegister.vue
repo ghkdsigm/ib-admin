@@ -1,7 +1,12 @@
 <template>
   <div class="login-wrapper">
     <div class="content">
-      <h2 @click="toHome">레퍼런스 등록</h2>
+      <img
+        src="https://www.itembaycorp.com/resources/images/common/ico_logo.png"
+        alt="아이템베이 로고"
+        @click="toHome"
+      />
+      <h2>레퍼런스 등록</h2>
       <div id="loginForm">
         <form>
           <div>
@@ -93,6 +98,7 @@
               placeholder="
 ex) 
 tbEvent_202106OdinBingoLog -- 빙고 로그"
+              v-model="registerList.newTb"
             />
           </div>
           <div>
@@ -106,6 +112,7 @@ up_Event_202211FIFA2022_GetCompetitionDate -- 경기 일자 조회
 up_Event_202211FIFA2022_ArrCommentList -- 댓글 조회 
 up_Event_202211FIFA2022_AddComment -- 댓글 입력 
 up_Event_202211FIFA2022_CommentCheck -- 댓글 삭제"
+              v-model="registerList.newSp"
             />
           </div>
           <div>
@@ -121,11 +128,12 @@ up_Coupon_AddCouponStockByDtRegDate
 up_Admin_Coupon_AddCouponBulk
 up_Admin_Coupon_AddCouponCatalog
 up_Batch_SetCouponByLimitDate"
+              v-model="registerList.editSp"
             />
           </div>
           <div>
             <label for="">비고</label>
-            <input type="text" id="" />
+            <input type="text" id="" v-model="registerList.etc" />
           </div>
           <div>
             <span
@@ -143,6 +151,8 @@ up_Batch_SetCouponByLimitDate"
 </template>
 
 <script>
+import data from "@/api/data.json";
+
 export default {
   data() {
     return {
@@ -156,7 +166,11 @@ export default {
         realserver: "",
         redmineurl: "",
         sourceplace: "",
+        newTb: "",
+        newSp: "",
+        etc: "",
       },
+      eventList: data,
     };
   },
   methods: {
@@ -179,15 +193,22 @@ export default {
         // eslint-disable-next-line no-alert
         if (confirm("레퍼런스를 등록 하시겠습니까?")) {
           // eslint-disable-next-line no-alert
-          vm.thumbnail = "";
-          vm.category = "";
-          vm.code = "";
-          vm.eventName = "";
-          vm.content = "";
-          vm.functions = "";
-          vm.realserver = "";
-          vm.redmineurl = "";
-          vm.sourceplace = "";
+          const registerlist = {
+            thumbnail: this.thumbnail,
+            category: this.category,
+            code: this.code,
+            eventName: this.eventName,
+            content: this.content,
+            functions: this.functions,
+            realserver: this.realserver,
+            redmineurl: this.redmineurl,
+            sourceplace: this.sourceplace,
+          };
+          var currentTime = new Date();
+          var thisYear = currentTime.getFullYear();
+          // this.eventList[thisYear].map((v, i) => {
+          //   v.push(registerlist);
+          // });
           // eslint-disable-next-line no-alert
           alert("등록이 완료되었습니다.");
           this.$router.push("/");
@@ -219,11 +240,13 @@ export default {
 #loginForm {
   margin: auto;
 }
+.content > img {
+  cursor: pointer;
+}
 h2 {
   font-size: 24px;
   color: #6A24FE;
   margin-bottom: 20px;
-  cursor: pointer;
 }
 #loginForm input {
   width: 100%;
@@ -231,7 +254,7 @@ h2 {
   padding: 0 10px;
   box-sizing: border-box;
   border-radius: 6px;
-  background-color: #F8F8F8;
+  background-color: #f3f3f3;
   border: none;
 }
 #loginForm textarea {
@@ -247,10 +270,12 @@ h2 {
 #loginForm input::placeholder {
   color: #b3b3b3;
   font-weight: 100;
+  font-size: 13px;
 }
 #loginForm textarea::placeholder {
   color: #b3b3b3;
   font-weight: 100;
+  font-size: 13px;
 }
 
 .button {

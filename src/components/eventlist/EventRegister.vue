@@ -206,6 +206,7 @@ export default {
           };
           var currentTime = new Date();
           var thisYear = currentTime.getFullYear();
+          /*** json 등록 구현 필요 ***/
           // this.eventList[thisYear].map((v, i) => {
           //   v.push(registerlist);
           // });
@@ -245,7 +246,7 @@ export default {
 }
 h2 {
   font-size: 24px;
-  color: #6A24FE;
+  color: #6a24fe;
   margin-bottom: 20px;
 }
 #loginForm input {
@@ -263,7 +264,7 @@ h2 {
   padding: 10px;
   box-sizing: border-box;
   border-radius: 6px;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   border: none;
 }
 
@@ -287,7 +288,7 @@ h2 {
   border-radius: 6px;
   color: #fff;
   font-size: 16px;
-  background-color: #6A24FE;
+  background-color: #6a24fe;
   margin-top: 20px;
   border: none;
   display: flex;

@@ -98,7 +98,7 @@ export default {
 }
 .login-wrapper .content p em {
   font-size: 10px;
-  color: #6A24FE;
+  color: #6a24fe;
   font-style: normal;
 }
 #loginForm {
@@ -109,7 +109,7 @@ export default {
 }
 h2 {
   font-size: 24px;
-  color: #6A24FE;
+  color: #6a24fe;
   margin-bottom: 20px;
 }
 #loginForm input {
@@ -124,7 +124,7 @@ h2 {
 }
 
 #loginForm input::placeholder {
-  color: #D2D2D2;
+  color: #d2d2d2;
 }
 
 .button {
@@ -136,7 +136,7 @@ h2 {
   border-radius: 6px;
   color: #fff;
   font-size: 16px;
-  background-color: #6A24FE;
+  background-color: #6a24fe;
   margin-top: 20px;
   border: none;
 }

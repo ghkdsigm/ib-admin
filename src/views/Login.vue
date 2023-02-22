@@ -4,7 +4,7 @@
       <h2 @click="toHome">레퍼런스 로그인</h2>
       <p>
         *아이템베이 이벤트 프로모션 레퍼런스 등록을 위한 로그인 화면입니다.<br />권한
-        관련 문의는 담당 관리자에게 문의하세요
+        관련 문의는 담당 관리자<em>(황승현대리/손정완주임)</em>에게 문의하세요
       </p>
       <div id="loginForm">
         <form @submit.prevent="fnLogin">
@@ -89,6 +89,11 @@ export default {
 }
 .login-wrapper .content p {
   font-size: 12px;
+}
+.login-wrapper .content p em {
+  font-size: 10px;
+  color: #6A24FE;
+  font-style: normal;
 }
 #loginForm {
   margin: auto;

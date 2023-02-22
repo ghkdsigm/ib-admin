@@ -280,9 +280,10 @@ form div {
 form div label {
   margin-right: 15px;
   min-width: 150px;
+  font-size: 14px;
 }
 .important {
   color: red;
-  padding-right: 2px;
+  padding-right: 3px;
 }
 </style>

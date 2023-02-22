@@ -129,6 +129,8 @@ export default {
       XLSX.writeFile(wb, "ItembayEventReferences.xlsx");
     },
     logout() {
+      // eslint-disable-next-line no-alert
+      alert("로그아웃 되었습니다.");
       this.loginActive = false;
       this.$store.dispatch("loginUser", false);
     },

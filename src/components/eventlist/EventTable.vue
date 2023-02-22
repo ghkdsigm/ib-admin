@@ -316,6 +316,7 @@ export default {
   font-weight: 700;
   padding: 5px 6px 5px 6px;
   background: whitesmoke;
+  box-shadow: 0px 1px 0px #93939336;
 }
 .tableWrap table tbody tr {
   box-sizing: border-box;

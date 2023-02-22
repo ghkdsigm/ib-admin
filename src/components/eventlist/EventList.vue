@@ -1,7 +1,13 @@
 <!-- eslint-disable vue/valid-v-for -->
 <template>
   <div>
-    <h3>아이템베이 이벤트 프로모션 레퍼런스 페이지</h3>
+    <h3>
+      아이템베이 이벤트 프로모션 레퍼런스 페이지
+      <router-link to="/login" v-if="this.loginActive !== true" class="loginbt"
+        >로그인</router-link
+      >
+      <span class="loginbt" v-else @click="logout">로그아웃</span>
+    </h3>
     <div class="eventSearchWrap">
       <ul class="eventTab">
         <li
@@ -18,9 +24,7 @@
         <button type="button" @click="excelDown()" class="excelBt">
           엑셀 다운로드
         </button>
-        <button type="button" @click="excelDown()" class="excelBt">
-          레퍼런스 등록
-        </button>
+        <button type="button" class="excelBt">레퍼런스 등록</button>
       </div>
     </div>
     <EventTable
@@ -50,6 +54,7 @@ export default {
       selectedTab: [],
       isActive: false,
       categoryList: [],
+      loginActive: "",
     };
   },
   created() {
@@ -67,6 +72,7 @@ export default {
         lastTab[i].classList.add("on");
       }
     });
+    this.loginActive = this.$store.state.loginActive;
   },
   methods: {
     tabBt(eventYear, tabIndex) {
@@ -120,6 +126,10 @@ export default {
       XLSX.utils.book_append_sheet(wb, dataWS, "Event References");
       XLSX.writeFile(wb, "ItembayEventReferences.xlsx");
     },
+    logout() {
+      this.loginActive = false;
+      this.$store.dispatch("loginUser", false);
+    },
   },
 };
 </script>
@@ -127,6 +137,21 @@ export default {
 <style>
 h3 {
   margin: 15px auto 0;
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 1200px;
+}
+h3 .loginbt {
+  text-decoration: none;
+  position: absolute;
+  right: 0;
+  font-size: 14px;
+  font-weight: 100;
+}
+h3 .loginbt:hover {
+  color: #4463d5;
+  cursor: pointer;
 }
 .eventSearchWrap {
   display: flex;

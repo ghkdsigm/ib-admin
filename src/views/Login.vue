@@ -1,10 +1,13 @@
 <template>
   <div class="login-wrapper">
     <div class="content">
-      <h2>로그인</h2>
+      <h2>
+        아이템베이 레퍼런스 페이지<br />
+        로그인
+      </h2>
       <p>
-        *아이템베이 이벤트 프로모션 레퍼런스 등록을 위한 로그인 화면입니다.<br />담당
-        관리자에게 문의하세요
+        *아이템베이 이벤트 프로모션 레퍼런스 등록을 위한 로그인 화면입니다.<br />권한
+        관련 문의는 담당 관리자에게 문의하세요
       </p>
       <div id="loginForm">
         <form @submit.prevent="fnLogin">
@@ -26,7 +29,9 @@
             />
           </p>
           <p>
-            <button type="submit" class="button w3-green w3-round">로그인</button>
+            <button type="submit" class="button w3-green w3-round">
+              로그인
+            </button>
           </p>
         </form>
       </div>
@@ -39,6 +44,7 @@ export default {
     return {
       user_id: "",
       user_pw: "",
+      loginActive: false,
     };
   },
   methods: {
@@ -47,15 +53,23 @@ export default {
         if (this.user_id === "test" && this.user_pw === "pw123") {
           // eslint-disable-next-line no-alert
           alert("로그인 되었습니다.");
+          this.$router.push("/");
+          this.login = true;
+          this.$store.dispatch("loginUser", true);
         } else {
           // eslint-disable-next-line no-alert
           alert("아이디 또는 패스워드가 올바르지 않습니다. 다시 입력해주세요");
+          this.user_id = "";
+          this.user_pw = "";
         }
       } else {
         // eslint-disable-next-line no-alert
         alert("아이디 또는 패스워드를 입력해주세요!");
       }
     },
+  },
+  mounted() {
+    this.loginActive = false;
   },
 };
 </script>

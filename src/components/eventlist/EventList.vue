@@ -6,7 +6,9 @@
       <router-link to="/login" v-if="this.loginActive !== true" class="loginbt"
         >로그인</router-link
       >
-      <span class="loginbt" v-else @click="logout">로그아웃</span>
+      <span class="loginbt" v-else @click="logout"
+        ><em>관리자님 환영합니다.</em> 로그아웃</span
+      >
     </h3>
     <div class="eventSearchWrap">
       <ul class="eventTab">
@@ -174,6 +176,11 @@ h3 .loginbt {
 h3 .loginbt:hover {
   color: #4463d5;
   cursor: pointer;
+}
+h3 .loginbt em {
+  padding-right: 15px;
+  color: #000;
+  font-weight: 300;
 }
 .eventSearchWrap {
   display: flex;

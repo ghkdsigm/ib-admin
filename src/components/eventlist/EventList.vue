@@ -130,9 +130,13 @@ export default {
     },
     logout() {
       // eslint-disable-next-line no-alert
-      alert("로그아웃 되었습니다.");
-      this.loginActive = false;
-      this.$store.dispatch("loginUser", false);
+      if (confirm("정말 로그아웃 하시겠습니까?")) {
+        this.loginActive = false;
+        this.$store.dispatch("loginUser", false);
+        // eslint-disable-next-line no-alert
+        alert("로그아웃 되었습니다.");
+        this.$router.go(0);
+      }
     },
     registerRef() {
       this.$nextTick(() => {
@@ -141,7 +145,6 @@ export default {
         } else {
           // eslint-disable-next-line no-alert
           alert("로그인이 필요합니다.");
-          this.$router.push("/login");
         }
       });
     },

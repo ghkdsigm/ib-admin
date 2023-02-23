@@ -390,7 +390,7 @@ export default {
   filter: grayscale(0%) contrast(1) brightness(100%);
 }
 .previewPop button {
-  width: 50%;
+  flex: 1 1 auto;
   height: 100%;
   position: relative;
   top: 0;

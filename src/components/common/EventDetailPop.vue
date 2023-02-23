@@ -57,6 +57,22 @@
           </td>
         </tr>
         <tr>
+          <th>모바일 바로가기</th>
+          <td>
+            <span v-if="detailInfo.mobilelocalPageUrl">
+              <a
+                :href="fronMobilurl + detailInfo.mobilelocalPageUrl"
+                target="_blank"
+              >
+                {{ detailInfo.mobilelocalPageUrl }}
+              </a>
+            </span>
+            <span v-else style="color: #cd0606">
+              모바일 링크 URL이 존재하지않습니다.
+            </span>
+          </td>
+        </tr>
+        <tr>
           <th>비고</th>
           <td>
             {{ detailInfo?.etc }}
@@ -73,7 +89,10 @@ export default {
     detailInfo: Object,
   },
   data() {
-    return {};
+    return {
+      fronMobilurl:
+        "http://ds-mb.itembay.co.kr:3002/pb-10186_%E5%85%88%ED%95%A0%EC%9D%B8%ED%98%95_%EC%8B%A0%EA%B7%9C_%EC%BF%A0%ED%8F%B0_IB%ED%8F%AC%EC%9D%B8%ED%8A%B8%EC%BF%A0%ED%8F%B0_%EC%B6%94%EA%B0%80_%EA%B1%B4/event",
+    };
   },
 };
 </script>

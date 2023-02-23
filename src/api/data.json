@@ -1,7 +1,7 @@
 {
   "2023": [
     {
-      "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
+      "name": "DK모바일 디오리진 시즌3 오픈 프로모션",
       "content": "이벤트 기간 동안 추가 마일리지가 적립되는 이벤트",
       "code": "1389",
       "place": "WEB-INF\\view_event\\20221205_tosspay",
@@ -24,7 +24,8 @@
       },
       "seaseon": "상시",
       "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",
-      "localPageUrl": "/resources/event/2022/1229_dk/index.html"
+      "localPageUrl": "/resources/event/2022/1229_dk/index.html",
+      "mobilelocalPageUrl": "/2022/1230_payBack/index.html"
     },
     {
       "name": "모바일팝 22년 12월 추가 5% 적립 프로모션 진행의 건",
@@ -76,7 +77,8 @@
       },
       "seaseon": "상시",
       "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",
-      "localPageUrl": "/resources/event/2022/1205_toss/index.html"
+      "localPageUrl": "/resources/event/2022/1205_toss/index.html",
+      "mobilelocalPageUrl": "/2022/1121_fifa/index.html"
     },
     {
       "name": "디아블로2 래더 시즌2 후속 프로모션",
@@ -103,7 +105,8 @@
       },      
       "seaseon": "상시",
       "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
-      "localPageUrl": "/resources/event/2022/1121_fifa/index.html"
+      "localPageUrl": "/resources/event/2022/1121_fifa/index.html",
+      "mobilelocalPageUrl": "/2022/1104_diablo2/index.html"
     },
     {
       "name": "<DK모바일 디오리진 시즌2> 제휴 오픈 프로모션",
@@ -130,7 +133,8 @@
       },  
       "seaseon": "비상시",
       "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
-      "localPageUrl": "/resources/event/2022/1104_diablo2/index.html"
+      "localPageUrl": "/resources/event/2022/1104_diablo2/index.html",
+      "mobilelocalPageUrl": "/2022/1013_dk/index.html"
     },
     {
       "name": "모바일 리니지 통합 프로모션",
@@ -157,7 +161,8 @@
       },  
       "seaseon": "상시",
       "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
-      "localPageUrl": "/resources/event/2022/1013_dk/index.html"
+      "localPageUrl": "/resources/event/2022/1013_dk/index.html",
+      "mobilelocalPageUrl": "/2022/1004_lngm/index.html"
     },
     {
       "name": "오딘, 히트2 업데이트 대응 프로모션",
@@ -184,7 +189,8 @@
       },  
       "seaseon": "비상시",
       "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
-      "localPageUrl": "/resources/event/2022/1007_diablo2/index.html"
+      "localPageUrl": "/resources/event/2022/1007_diablo2/index.html",
+      "mobilelocalPageUrl": "/2022/1001_odin_hit2/index.html"
     },
     {
       "name": "친구추천 캠페인 개발요청",
@@ -211,7 +217,8 @@
       },  
       "seaseon": "상시",
       "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
-      "localPageUrl": "/resources/event/2022/1001_odin_hit2/index.html"
+      "localPageUrl": "/resources/event/2022/1001_odin_hit2/index.html",
+      "mobilelocalPageUrl": "/2022/0912_friend/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",
@@ -238,7 +245,8 @@
       },  
       "seaseon": "비상시",
       "etc": "이전 리니지W BJ콜라보 프로모션(1337)이 연장되어 진행된 이벤트",      
-      "localPageUrl": "/resources/event/2022/0929_dk/index.html"
+      "localPageUrl": "/resources/event/2022/0929_dk/index.html",
+      "mobilelocalPageUrl": "/2022/0912_friend/index.html"
     },
     {
       "name": "토스페이 첫결제 3천원 지원 이벤트 페이지 제작33",

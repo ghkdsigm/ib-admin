@@ -10,12 +10,21 @@
       <div id="loginForm">
         <form>
           <div>
-            <label for=""><em class="important">*</em>썸네일 url</label>
+            <label for=""><em class="important">*</em>웹 퍼블 url</label>
             <input
               type="text"
               id=""
               placeholder="ex) resources/event/2022/1229_dk/index.html"
               v-model="registerList.thumbnail"
+            />
+          </div>
+          <div>
+            <label for=""><em class="important">*</em>모바일 퍼블 url</label>
+            <input
+              type="text"
+              id=""
+              placeholder="ex) event/2022/1229_dk/index.html"
+              v-model="registerList.Mthumbnail"
             />
           </div>
           <div>
@@ -103,17 +112,21 @@ tbEvent_202106OdinBingoLog -- 빙고 로그"
           </div>
           <div>
             <label for="">신규SP</label>
-            <textarea
+            <input
               type="text"
               id=""
-              placeholder="
-ex)
-up_Event_202211FIFA2022_GetCompetitionDate -- 경기 일자 조회 
-up_Event_202211FIFA2022_ArrCommentList -- 댓글 조회 
-up_Event_202211FIFA2022_AddComment -- 댓글 입력 
-up_Event_202211FIFA2022_CommentCheck -- 댓글 삭제"
-              v-model="registerList.newSp"
+              placeholder="ex) up_Event_202211FIFA2022_GetCompetitionDate -- 경기 일자 조회"
+              v-model="addnewsp"
+              @keyup.enter="addNewSps"
             />
+          </div>
+          <div v-if="this.registerList.newSp.length > 0">
+            <label for=""></label>
+            <ul class="newspon">
+              <li v-for="(item, i) in registerList.newSp" :key="i">
+                {{ item }} <b @click="delSp(i)">❌</b>
+              </li>
+            </ul>
           </div>
           <div>
             <label for="">수정SP</label>
@@ -167,15 +180,35 @@ export default {
         redmineurl: "",
         sourceplace: "",
         newTb: "",
-        newSp: "",
+        newSp: [],
         etc: "",
+        Mthumbnail: "",
       },
+      addnewsp: "",
       eventList: data,
     };
   },
   methods: {
     toHome() {
       this.$router.push("/");
+    },
+    delSp(e) {
+      this.registerList.newSp.forEach((v, i) => {
+        if (e === i) {
+          this.registerList.newSp.splice(e, 1);
+        }
+      });
+    },
+    addNewSps() {
+      this.$nextTick(() => {
+        if (this.addnewsp) {
+          this.registerList.newSp.push(this.addnewsp);
+        } else {
+          // eslint-disable-next-line no-alert
+          alert("신규 SP를 입력하세요");
+        }
+        this.addnewsp = "";
+      });
     },
     registerReference() {
       const vm = this.registerList;
@@ -188,7 +221,8 @@ export default {
         vm.functions !== "" &&
         vm.realserver !== "" &&
         vm.redmineurl !== "" &&
-        vm.sourceplace !== ""
+        vm.sourceplace !== "" &&
+        vm.Mthumbnail
       ) {
         // eslint-disable-next-line no-alert
         if (confirm("레퍼런스를 등록 하시겠습니까?")) {
@@ -203,6 +237,7 @@ export default {
             realserver: this.realserver,
             redmineurl: this.redmineurl,
             sourceplace: this.sourceplace,
+            Mthumbnail: this.Mthumbnail,
           };
           var currentTime = new Date();
           var thisYear = currentTime.getFullYear();
@@ -312,5 +347,14 @@ form div label {
 .important {
   color: red;
   padding-right: 3px;
+}
+.newspon {
+  font-size: 12px;
+  text-align: left;
+  padding: 2px;
+}
+.newspon b {
+  cursor: pointer;
+  padding-left: 5px;
 }
 </style>

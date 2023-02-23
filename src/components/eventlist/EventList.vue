@@ -217,6 +217,7 @@ h3 .loginbt em {
   font-size: 13px;
   text-decoration: none;
   padding: 5px;
+  margin-left: 5px;
 }
 .excelBt:hover {
   cursor: pointer;

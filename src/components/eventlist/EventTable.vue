@@ -143,10 +143,10 @@
     <div class="previewPop">
       <div class="previewWrap">
         <button @click="fullpage">전체보기</button>
-        <button @click="closePreviewPop">미리보기 닫기</button>
         <button v-if="mobileUrl.mobilelocalPageUrl" @click="linkToMobile">
           모바일 보기
         </button>
+        <button @click="closePreviewPop">미리보기 닫기</button>
       </div>
       <Iframe :sel-page-url="selPageUrl" />
     </div>

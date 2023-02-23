@@ -28,7 +28,7 @@
           <td>
             <div
               class="thumbnail-container previewWrapper"
-              @click="doMouseOver(localUrl + item.localPageUrl)"
+              @click="doMouseOver(localUrl + item.localPageUrl, item)"
             >
               <div class="thumbnail">
                 <iframe
@@ -100,7 +100,7 @@
           <td>
             <div
               class="thumbnail-container previewWrapper"
-              @click="doMouseOver(localUrl + item.localPageUrl)"
+              @click="doMouseOver(localUrl + item.localPageUrl, item)"
             >
               <div class="thumbnail">
                 <iframe
@@ -144,6 +144,9 @@
       <div class="previewWrap">
         <button @click="fullpage">전체보기</button>
         <button @click="closePreviewPop">미리보기 닫기</button>
+        <button v-if="mobileUrl.mobilelocalPageUrl" @click="linkToMobile">
+          모바일 보기
+        </button>
       </div>
       <Iframe :sel-page-url="selPageUrl" />
     </div>
@@ -181,10 +184,11 @@ export default {
       selPageUrl: "",
       detailInfo: {},
       url: "",
-      localUrl: "http://design2.itembay.co.kr/",
+      localUrl: "http://design2.itembay.co.kr",
       searchVal: "",
       searchListNum: "",
       isActive: false,
+      mobileUrl: "",
     };
   },
   components: {
@@ -213,11 +217,20 @@ export default {
     },
   },
   methods: {
-    doMouseOver(e) {
+    doMouseOver(e, item) {
       this.$nextTick(() => {
         const target = document.querySelector(".previewPop");
         this.selPageUrl = e;
         target.style.display = "block";
+        this.mobileUrl = item;
+      });
+    },
+    linkToMobile() {
+      this.$nextTick(() => {
+        window.open(
+          `http://ds-mb.itembay.co.kr:3002/pb-10186_%E5%85%88%ED%95%A0%EC%9D%B8%ED%98%95_%EC%8B%A0%EA%B7%9C_%EC%BF%A0%ED%8F%B0_IB%ED%8F%AC%EC%9D%B8%ED%8A%B8%EC%BF%A0%ED%8F%B0_%EC%B6%94%EA%B0%80_%EA%B1%B4/event${this.mobileUrl.mobilelocalPageUrl}`,
+          "_blank",
+        );
       });
     },
     fullpage() {

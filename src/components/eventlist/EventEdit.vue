@@ -6,7 +6,7 @@
         alt="아이템베이 로고"
         @click="toHome"
       />
-      <h2>레퍼런스 등록</h2>
+      <h2>레퍼런스 수정</h2>
       <div id="loginForm">
         <form>
           <div>
@@ -247,7 +247,7 @@ export default {
         vm.Mthumbnail
       ) {
         // eslint-disable-next-line no-alert
-        if (confirm("레퍼런스를 등록 하시겠습니까?")) {
+        if (confirm("레퍼런스를 수정 하시겠습니까?")) {
           // eslint-disable-next-line no-alert
           const registerlist = {
             permanent: this.permanent,
@@ -269,7 +269,7 @@ export default {
           //   v.push(registerlist);
           // });
           // eslint-disable-next-line no-alert
-          alert("등록이 완료되었습니다.");
+          alert("수정이 완료되었습니다.");
           this.$router.push("/");
         }
       } else {
@@ -325,6 +325,15 @@ h2 {
   color: #6a24fe;
   margin-bottom: 20px;
   font-weight: bold;
+}
+#loginForm select {
+  width: 30%;
+  height: 35px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  background-color: #f3f3f3;
+  border: none;
 }
 #loginForm input {
   width: 100%;

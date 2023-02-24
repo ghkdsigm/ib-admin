@@ -6,7 +6,7 @@
         alt="아이템베이 로고"
         @click="toHome"
       />
-      <h2>레퍼런스 등록</h2>
+      <h2>레퍼런스 신규 등록</h2>
       <div id="loginForm">
         <form>
           <div>
@@ -207,7 +207,7 @@ export default {
     delSp(e) {
       this.registerList.newSp.forEach((v, i) => {
         if (e === i) {
-          this.registerList.registerList.newSp.splice(e, 1);
+          this.registerList.newSp.splice(e, 1);
         }
       });
     },

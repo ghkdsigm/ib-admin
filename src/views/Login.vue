@@ -32,9 +32,8 @@
             </button>
           </p>
           <p>
-            *아이템베이 이벤트 프로모션 레퍼런스 등록을 위한 로그인
-            화면입니다.<br />권한 관련 문의는 담당
-            관리자<em>(황승현대리/손정완주임)</em>에게 문의하세요
+            *로그인 및 권한 관련 문의는 <br />
+            <em> 개발팀</em>에 문의해주세요
           </p>
         </form>
       </div>
@@ -53,15 +52,15 @@ export default {
   methods: {
     fnLogin() {
       if (this.user_id !== "" && this.user_pw !== "") {
-        if (this.user_id === "test" && this.user_pw === "pw123") {
+        if (
+          (this.user_id === "test" && this.user_pw === "pw123") ||
+          (this.user_id === "itembay3" && this.user_pw === "abcd1234!")
+        ) {
           // eslint-disable-next-line no-alert
           alert("로그인 되었습니다.");
           this.$router.push("/");
           this.login = true;
           this.$store.dispatch("loginUser", true);
-        } else if (this.user_pw.toUpperCase()) {
-          // eslint-disable-next-line no-alert
-          alert("caps lock을 끄고 다시 시도해주세요");
         } else {
           // eslint-disable-next-line no-alert
           alert("아이디 또는 패스워드가 올바르지 않습니다. 다시 입력해주세요");
@@ -101,7 +100,6 @@ export default {
   letter-spacing: -0.3px;
 }
 .login-wrapper .content p em {
-  font-size: 10px;
   color: #6a24fe;
   font-style: normal;
 }

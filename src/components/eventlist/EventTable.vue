@@ -22,7 +22,7 @@
           <th>실서버</th>
           <th>일감</th>
           <th>상세</th>
-          <th>수정</th>
+          <th>관리</th>
         </tr>
       </thead>
       <tbody>
@@ -69,6 +69,7 @@
           </td>
           <td>
             <a href="javascript:;" @click="eventEdit(item)">수정</a>
+            <a href="javascript:;" @click="eventDel(index)">삭제</a>
           </td>
         </tr>
       </tbody>
@@ -95,7 +96,7 @@
           <th>실서버</th>
           <th>일감</th>
           <th>상세</th>
-          <th>수정</th>
+          <th>관리</th>
         </tr>
       </thead>
       <tbody>
@@ -310,6 +311,27 @@ export default {
       this.$nextTick(() => {
         if (this.loginActive) {
           this.$router.push({ name: "Edit", params: { registerList: e } });
+        } else {
+          // eslint-disable-next-line no-alert
+          alert("로그인이 필요합니다.");
+          this.$router.push("/login");
+        }
+      });
+    },
+    eventDel(e) {
+      console.log(e)
+      this.$nextTick(() => {
+        if (this.loginActive) {
+          // eslint-disable-next-line no-alert
+          if (confirm("정말 삭제하시겠습니까?")) {
+            this.selectedTab.map((v, i) => {
+              if (i === e) {
+                return this.selectedTab.splice(e, 1);
+              }
+            });
+            // eslint-disable-next-line no-alert
+            alert("삭제되었습니다.");
+          }
         } else {
           // eslint-disable-next-line no-alert
           alert("로그인이 필요합니다.");

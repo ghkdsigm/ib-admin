@@ -20,6 +20,11 @@ const routes = [
     name: "Register",
     component: () => import("@/components/eventlist/EventRegister.vue"),
   },
+  {
+    path: "/edit",
+    name: "Edit",
+    component: () => import("@/components/eventlist/EventEdit.vue"),
+  },
 ];
 
 const router = new VueRouter({

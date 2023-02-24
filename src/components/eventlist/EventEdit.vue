@@ -165,7 +165,7 @@ up_Batch_SetCouponByLimitDate"
               class="button w3-green w3-round"
               @click="registerReference"
             >
-              레퍼런스 등록
+              레퍼런스 수정
             </span>
           </div>
         </form>
@@ -207,7 +207,7 @@ export default {
     delSp(e) {
       this.registerList.newSp.forEach((v, i) => {
         if (e === i) {
-          this.registerList.registerList.newSp.splice(e, 1);
+          this.registerList.newSp.splice(e, 1);
         }
       });
     },
@@ -278,6 +278,24 @@ export default {
       }
     },
   },
+  mounted() {
+    const vm = this.registerList;
+    const routeVm = this.$route.params.registerList;
+    vm.permanent = routeVm.permanent;
+    vm.thumbnail = routeVm.localPageUrl;
+    vm.category = routeVm.category.name;
+    vm.code = routeVm.code;
+    vm.eventName = routeVm.name;
+    vm.content = routeVm.content;
+    vm.functions = routeVm.function;
+    vm.realserver = routeVm.pageUrl;
+    vm.redmineurl = routeVm.workUrl;
+    vm.sourceplace = routeVm.place;
+    vm.newTb = routeVm.tableSp.newTb;
+    vm.newSp = routeVm.tableSp.newSp;
+    vm.etc = routeVm.etc;
+    vm.Mthumbnail = routeVm.mobilelocalPageUrl;
+  },
 };
 </script>
 
@@ -310,15 +328,6 @@ h2 {
 }
 #loginForm input {
   width: 100%;
-  height: 35px;
-  padding: 0 10px;
-  box-sizing: border-box;
-  border-radius: 6px;
-  background-color: #f3f3f3;
-  border: none;
-}
-#loginForm select {
-  width: 50%;
   height: 35px;
   padding: 0 10px;
   box-sizing: border-box;

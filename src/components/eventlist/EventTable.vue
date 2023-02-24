@@ -6,10 +6,11 @@
         <col width="15%" />
         <col width="20%" />
         <col width="20%" />
-        <col width="18%" />
+        <col width="15%" />
         <col width="7%" />
         <col width="5%" />
         <col width="5%" />
+        <col width="3%" />
       </colgroup>
       <thead>
         <tr class="tbHeader">
@@ -21,6 +22,7 @@
           <th>실서버</th>
           <th>일감</th>
           <th>상세</th>
+          <th>수정</th>
         </tr>
       </thead>
       <tbody>
@@ -45,7 +47,7 @@
           </td>
           <td class="CellWithComment" style="color: #4463d5">
             {{ item.category.name }}
-            <span class="CellComment">{{ item.seaseon }}</span>
+            <span class="CellComment">{{ item.permanent }}</span>
           </td>
           <td>
             {{ item.name }}
@@ -65,6 +67,9 @@
           <td>
             <a href="javascript:;" @click="eventDetail(item)">보기</a>
           </td>
+          <td>
+            <a href="javascript:;" @click="eventEdit(item)">수정</a>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -74,10 +79,11 @@
         <col width="15%" />
         <col width="20%" />
         <col width="20%" />
-        <col width="18%" />
+        <col width="15%" />
         <col width="7%" />
         <col width="5%" />
         <col width="5%" />
+        <col width="3%" />
       </colgroup>
       <thead>
         <tr class="tbHeader">
@@ -89,6 +95,7 @@
           <th>실서버</th>
           <th>일감</th>
           <th>상세</th>
+          <th>수정</th>
         </tr>
       </thead>
       <tbody>
@@ -117,7 +124,7 @@
           </td>
           <td class="CellWithComment" style="color: #4463d5">
             {{ item.category.name }}
-            <span class="CellComment">{{ item.seaseon }}</span>
+            <span class="CellComment">{{ item.permanent }}</span>
           </td>
           <td>
             {{ item.name }}
@@ -136,6 +143,9 @@
           </td>
           <td>
             <a href="javascript:;" @click="eventDetail(item)">보기</a>
+          </td>
+          <td>
+            <a href="javascript:;" @click="eventEdit(item)">수정</a>
           </td>
         </tr>
       </tbody>
@@ -183,12 +193,14 @@ export default {
       selpreview: "",
       selPageUrl: "",
       detailInfo: {},
+      editInfo: {},
       url: "",
       localUrl: "http://design2.itembay.co.kr",
       searchVal: "",
       searchListNum: "",
       isActive: false,
       mobileUrl: "",
+      loginActive: "",
     };
   },
   components: {
@@ -197,6 +209,7 @@ export default {
   },
   mounted() {
     this.searchListNum = this.$store.state.searchList;
+    this.loginActive = this.$store.state.loginActive;
   },
   computed: {
     check_searchVal() {
@@ -290,6 +303,18 @@ export default {
         const target = document.querySelector(".layer-wrap");
         // const el = e.currentTarget.parentElement
         target.style.display = "flex";
+      });
+    },
+    eventEdit(e) {
+      this.editInfo = e;
+      this.$nextTick(() => {
+        if (this.loginActive) {
+          this.$router.push({ name: "Edit", params: { registerList: e } });
+        } else {
+          // eslint-disable-next-line no-alert
+          alert("로그인이 필요합니다.");
+          this.$router.push("/login");
+        }
       });
     },
     searchWord(event) {

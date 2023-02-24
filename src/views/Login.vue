@@ -59,7 +59,7 @@ export default {
           this.$router.push("/");
           this.login = true;
           this.$store.dispatch("loginUser", true);
-        } else if (this.user_pw.toUpperCase()){
+        } else if (this.user_pw.toUpperCase()) {
           // eslint-disable-next-line no-alert
           alert("caps lock을 끄고 다시 시도해주세요");
         } else {

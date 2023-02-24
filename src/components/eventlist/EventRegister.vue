@@ -111,7 +111,11 @@ tbEvent_202106OdinBingoLog -- 빙고 로그"
             />
           </div>
           <div>
-            <label for="">신규SP</label>
+            <label for=""
+              >신규SP<br /><span class="addSP"
+                >내용 입력 후 Enter를 누르시면 추가가 됩니다.</span
+              ></label
+            >
             <input
               type="text"
               id=""
@@ -202,7 +206,12 @@ export default {
     addNewSps() {
       this.$nextTick(() => {
         if (this.addnewsp) {
-          this.registerList.newSp.push(this.addnewsp);
+          if (this.registerList.newSp.length < 10) {
+            this.registerList.newSp.push(this.addnewsp);
+          } else {
+            // eslint-disable-next-line no-alert
+            alert("SP는 10개까지 등록 가능합니다.");
+          }
         } else {
           // eslint-disable-next-line no-alert
           alert("신규 SP를 입력하세요");
@@ -341,7 +350,7 @@ form div {
 }
 form div label {
   margin-right: 15px;
-  min-width: 150px;
+  min-width: 200px;
   font-size: 14px;
 }
 .important {
@@ -356,5 +365,10 @@ form div label {
 .newspon b {
   cursor: pointer;
   padding-left: 5px;
+}
+span.addSP {
+  color: red;
+  font-size: 10px;
+  font-weight: 400;
 }
 </style>

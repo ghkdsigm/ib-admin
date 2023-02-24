@@ -212,7 +212,7 @@ export default {
       });
     },
     selectSel(event) {
-      console.log(event.target.value); //value값 출력
+      console.log(event); //value값 출력
       this.registerList.permanent = event.target.value;
     },
     addNewSps() {

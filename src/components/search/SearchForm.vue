@@ -38,7 +38,7 @@ export default {
 .searchWrap input {
   padding: 10px;
   min-width: 300px;
-  border-radius: 5px;
+  border-radius: 55px;
   border: 1px solid #ccc;
 }
 .searchWrap input:focus {

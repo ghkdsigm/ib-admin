@@ -319,7 +319,6 @@ export default {
       });
     },
     eventDel(e) {
-      console.log(e)
       this.$nextTick(() => {
         if (this.loginActive) {
           // eslint-disable-next-line no-alert

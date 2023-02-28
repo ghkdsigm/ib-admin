@@ -385,6 +385,7 @@ form div label {
   margin-right: 15px;
   min-width: 200px;
   font-size: 14px;
+  text-align: left;
 }
 .important {
   color: red;

@@ -1,15 +1,21 @@
 <!-- eslint-disable vue/valid-v-for -->
 <template>
   <div>
-    <h3>
-      아이템베이 이벤트 프로모션 레퍼런스 페이지
+    <div class="header">
+      <h3>아이템베이 이벤트 프로모션 레퍼런스 페이지</h3>
+      <div>
+        <img
+          src="https://www.itembaycorp.com/resources/images/common/ico_logo.png"
+          alt="아이템베이 로고"
+        />
+      </div>
       <router-link to="/login" v-if="this.loginActive !== true" class="loginbt"
         >로그인</router-link
       >
       <span class="loginbt" v-else @click="logout"
         ><em>관리자님 환영합니다.</em> 로그아웃</span
       >
-    </h3>
+    </div>
     <div class="eventSearchWrap">
       <ul class="eventTab">
         <li
@@ -155,29 +161,38 @@ export default {
 };
 </script>
 
-<style>
-h3 {
-  margin: 15px auto 0;
+<style scoped>
+.header {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  top: 0;
+  padding: 22px 0 0;
+  z-index: 9999;
+}
+.header h3 {
   display: flex;
   position: relative;
   align-items: center;
-  width: 1200px;
   font-weight: bold;
   font-size: 17px;
   color: rgb(68, 99, 213);
 }
-h3 .loginbt {
+.header .loginbt {
   text-decoration: none;
-  position: absolute;
-  right: 0;
   font-size: 14px;
   font-weight: 300;
+  min-width: 200px;
+  text-align: right;
 }
-h3 .loginbt:hover {
+.header .loginbt:hover {
   color: #4463d5;
   cursor: pointer;
 }
-h3 .loginbt em {
+.header .loginbt em {
   padding-right: 15px;
   color: #000;
   font-weight: 300;
@@ -191,23 +206,35 @@ h3 .loginbt em {
   background: #fff;
   position: sticky;
   top: 0;
-  z-index: 3;
+  z-index: 9999;
   padding: 22px 0;
+}
+.eventTab {
+  min-width: 305px;
+  text-align: left;
+}
+.eventTab li:first-child {
+  margin-left:0;
 }
 .eventTab li {
   display: inline-block;
   margin: 0 15px;
+  font-weight: 500;
 }
 .eventTab li:hover {
   cursor: pointer;
+  font-weight: 500;
 }
 .eventTab li.on {
   color: #4463d5;
-  font-weight: bold;
+  font-weight: 500;
 }
 .eventTab li:hover {
   color: #4463d5;
-  font-weight: bold;
+  font-weight: 500;
+}
+.tbHeader {
+  z-index: 9999;
 }
 .excelBt {
   color: #fff;

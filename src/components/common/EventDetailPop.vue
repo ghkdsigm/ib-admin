@@ -8,6 +8,12 @@
       </colgroup>
       <tbody>
         <tr>
+          <th>상시여부</th>
+          <td>
+            {{ detailInfo?.permanent }}
+          </td>
+        </tr>
+        <tr>
           <th>카테고리</th>
           <td>
             {{ detailInfo?.category?.name }}
@@ -37,7 +43,7 @@
             {{ detailInfo?.tableSp?.newTable }}
           </td>
         </tr>
-        <tr>
+        <tr v-if="auth">
           <th>신규SP</th>
           <td>
             <ul>
@@ -80,6 +86,9 @@
         </tr>
       </tbody>
     </table>
+    <p v-if="!auth" class="auth">
+      * 로그인을 하시면 더 많은 정보를 확인하실 수 있습니다.
+    </p>
   </div>
 </template>
 
@@ -92,7 +101,11 @@ export default {
     return {
       fronMobilurl:
         "http://ds-mb.itembay.co.kr:3002/pb-10186_%E5%85%88%ED%95%A0%EC%9D%B8%ED%98%95_%EC%8B%A0%EA%B7%9C_%EC%BF%A0%ED%8F%B0_IB%ED%8F%AC%EC%9D%B8%ED%8A%B8%EC%BF%A0%ED%8F%B0_%EC%B6%94%EA%B0%80_%EA%B1%B4/event",
+      auth: this.$store.state.loginActive,
     };
+  },
+  mounted() {
+    this.auth = this.$store.state.loginActive;
   },
 };
 </script>
@@ -114,6 +127,7 @@ table tbody tr th {
   font-weight: 700;
   padding: 5px 6px 5px 6px;
   background: whitesmoke;
+  vertical-align: middle;
 }
 table tbody tr:nth-of-type(1) td {
   border-top: 1px solid #eee;
@@ -128,5 +142,11 @@ table tbody tr td {
   font-weight: 400;
   text-align: center;
   border-bottom: 1px solid #eee;
+}
+.auth {
+  font-size: 11px;
+  margin-top: 15px;
+  text-align: right;
+  color: #ff5555;
 }
 </style>

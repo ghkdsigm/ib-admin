@@ -53,7 +53,7 @@ export default {
     fnLogin() {
       if (this.user_id !== "" && this.user_pw !== "") {
         if (
-          (this.user_id === "test" && this.user_pw === "pw123") ||
+          (this.user_id === "test" && this.user_pw === "123") ||
           (this.user_id === "itembay3" && this.user_pw === "abcd1234!")
         ) {
           // eslint-disable-next-line no-alert

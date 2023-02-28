@@ -147,6 +147,7 @@
           </td>
           <td>
             <a href="javascript:;" @click="eventEdit(item)">수정</a>
+            <a href="javascript:;" @click="eventDel(index)">삭제</a>
           </td>
         </tr>
       </tbody>
@@ -402,6 +403,7 @@ export default {
 }
 .tableWrap table tbody tr td a {
   text-decoration: none;
+  display: block;
 }
 .tbHeader {
   position: sticky;

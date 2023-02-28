@@ -348,10 +348,10 @@ h2 {
 }
 
 #loginForm input:focus-visible {
-  outline: 2px solid #6a24fe;
+  outline: 1px solid #6a24fe;
 }
 #loginForm select:focus-visible {
-  outline: 2px solid #6a24fe;
+  outline: 1px solid #6a24fe;
 }
 
 .button {

@@ -546,14 +546,15 @@ a.btn-layerClose {
   position: absolute;
   z-index: 100;
   border: 1px;
-  background-color: white;
+  background-color: red;
   border-style: solid;
   border-width: 1px;
   border-color: red;
-  padding: 3px;
-  color: red;
+  padding: 1px 3px;
+  color: #fff;
   top: 20px;
   left: 50%;
+  border-radius: 5px;
   transform: translateX(-50%);
 }
 

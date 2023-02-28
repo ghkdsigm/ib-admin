@@ -365,6 +365,13 @@ h2 {
   font-size: 13px;
 }
 
+#loginForm input:focus-visible {
+  outline: 2px solid #6a24fe;
+}
+#loginForm select:focus-visible {
+  outline: 2px solid #6a24fe;
+}
+
 .button {
   width: 100%;
   height: 48px;
@@ -388,6 +395,9 @@ form div {
   display: flex;
   margin-bottom: 10px;
   align-items: center;
+}
+form div:hover label {
+  color: #6a24fe;
 }
 form div label {
   margin-right: 15px;

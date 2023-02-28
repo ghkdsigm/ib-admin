@@ -194,7 +194,7 @@ export default {
 }
 .header .loginbt em {
   padding-right: 15px;
-  color: #000;
+  color: #6a24fe;
   font-weight: 300;
 }
 .eventSearchWrap {

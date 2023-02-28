@@ -15,6 +15,7 @@
               name="uid"
               placeholder="아이디"
               v-model="user_id"
+              ref="cursor"
             /><br />
           </p>
           <p>
@@ -66,10 +67,12 @@ export default {
           alert("아이디 또는 패스워드가 올바르지 않습니다. 다시 입력해주세요");
           this.user_id = "";
           this.user_pw = "";
+          this.$refs.cursor.focus();
         }
       } else {
         // eslint-disable-next-line no-alert
         alert("아이디 또는 패스워드를 입력해주세요!");
+        this.$refs.cursor.focus();
       }
     },
     toHome() {
@@ -78,6 +81,7 @@ export default {
   },
   mounted() {
     this.loginActive = false;
+    this.$refs.cursor.focus();
   },
 };
 </script>
@@ -128,6 +132,10 @@ h2 {
 
 #loginForm input::placeholder {
   color: #d2d2d2;
+}
+
+#loginForm input:focus-visible {
+  outline: 1px solid #6a24fe;
 }
 
 .button {

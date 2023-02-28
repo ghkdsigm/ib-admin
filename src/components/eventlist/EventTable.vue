@@ -69,7 +69,7 @@
           </td>
           <td>
             <a href="javascript:;" @click="eventEdit(item)">수정</a>
-            <a href="javascript:;" @click="eventDel(index)">삭제</a>
+            <a href="javascript:;" @click="eventDel(index, item)">삭제</a>
           </td>
         </tr>
       </tbody>
@@ -147,7 +147,7 @@
           </td>
           <td>
             <a href="javascript:;" @click="eventEdit(item)">수정</a>
-            <a href="javascript:;" @click="eventDel(index)">삭제</a>
+            <a href="javascript:;" @click="eventDel(index, item)">삭제</a>
           </td>
         </tr>
       </tbody>
@@ -319,11 +319,11 @@ export default {
         }
       });
     },
-    eventDel(e) {
+    eventDel(e, item) {
       this.$nextTick(() => {
         if (this.loginActive) {
           // eslint-disable-next-line no-alert
-          if (confirm("정말 삭제하시겠습니까?")) {
+          if (confirm(`${item.name}을 \n정말 삭제하시겠습니까?`)) {
             this.selectedTab.map((v, i) => {
               if (i === e) {
                 return this.selectedTab.splice(e, 1);
@@ -404,6 +404,12 @@ export default {
 .tableWrap table tbody tr td a {
   text-decoration: none;
   display: block;
+}
+.tableWrap table tbody tr td a:hover {
+  color: red;
+}
+.tableWrap table tbody tr td a:first-child {
+  padding-bottom: 5px;
 }
 .tbHeader {
   position: sticky;

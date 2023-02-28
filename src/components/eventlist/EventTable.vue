@@ -5,8 +5,8 @@
         <col width="10%" />
         <col width="15%" />
         <col width="20%" />
-        <col width="20%" />
-        <col width="15%" />
+        <col width="23%" />
+        <col width="12%" />
         <col width="7%" />
         <col width="5%" />
         <col width="5%" />
@@ -79,8 +79,8 @@
         <col width="10%" />
         <col width="15%" />
         <col width="20%" />
-        <col width="20%" />
-        <col width="15%" />
+        <col width="23%" />
+        <col width="12%" />
         <col width="7%" />
         <col width="5%" />
         <col width="5%" />
@@ -393,7 +393,6 @@ export default {
   vertical-align: middle;
   /* white-space: nowrap; */
   font-size: 0.8em;
-  padding: 2px 6px 2px 6px;
   height: 22px;
   font-size: 0.75em;
   font-weight: 400;
@@ -439,7 +438,7 @@ export default {
   display: flex;
   height: 40px;
   align-items: center;
-  border: 2px solid transparent;
+  border: 2px solid #fff;
 }
 .previewWrapper:hover {
   cursor: pointer;

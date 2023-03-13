@@ -9,6 +9,7 @@ export default new Vuex.Store({
     searchVal: "",
     searchList: 0,
     loginActive: false,
+    userLevel: "",
   },
   mutations: {
     SET_SEARCHVAL(state, payload) {
@@ -17,6 +18,9 @@ export default new Vuex.Store({
     SET_USERLOGIN(state, payload) {
       state.loginActive = payload;
     },
+    SET_USERLEVEL(state, payload) {
+      state.userLevel = payload;
+    },
   },
   actions: {
     toggleStateUser({ commit }, payload) {
@@ -24,6 +28,9 @@ export default new Vuex.Store({
     },
     loginUser({ commit }, payload) {
       commit("SET_USERLOGIN", payload);
+    },
+    userLevel({ commit }, payload) {
+      commit("SET_USERLEVEL", payload);
     },
   },
   modules: {},

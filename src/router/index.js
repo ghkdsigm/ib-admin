@@ -30,6 +30,11 @@ const routes = [
     name: "Edit",
     component: () => import("@/components/eventlist/EventEdit.vue"),
   },
+  {
+    path: "/pbguide",
+    name: "PbGuide",
+    component: () => import("@/components/publishing/PublishingList.vue"),
+  },
 ];
 
 const router = new VueRouter({

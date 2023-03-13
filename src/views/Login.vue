@@ -59,9 +59,13 @@ export default {
         ) {
           // eslint-disable-next-line no-alert
           alert("로그인 되었습니다.");
+          this.$store.dispatch("userLevel", "admin");
           this.$router.push("/");
           this.login = true;
           this.$store.dispatch("loginUser", true);
+        } else if (this.user_id === "pb" && this.user_pw === "123") {
+          this.$store.dispatch("userLevel", "pblisher");
+          this.$router.push("/pbguide");
         } else {
           // eslint-disable-next-line no-alert
           alert("아이디 또는 패스워드가 올바르지 않습니다. 다시 입력해주세요");

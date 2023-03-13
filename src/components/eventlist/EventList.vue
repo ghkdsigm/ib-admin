@@ -1,21 +1,7 @@
 <!-- eslint-disable vue/valid-v-for -->
 <template>
   <div>
-    <div class="header">
-      <h3>아이템베이 이벤트 프로모션 레퍼런스 페이지</h3>
-      <div>
-        <img
-          src="https://www.itembaycorp.com/resources/images/common/ico_logo.png"
-          alt="아이템베이 로고"
-        />
-      </div>
-      <router-link to="/login" v-if="this.loginActive !== true" class="loginbt"
-        >로그인</router-link
-      >
-      <span class="loginbt" v-else @click="logout"
-        ><em>관리자님 환영합니다.</em> 로그아웃</span
-      >
-    </div>
+    <Header :is-active="isActive" :is-login="loginActive"> </Header>
     <div class="eventSearchWrap">
       <ul class="eventTab">
         <li
@@ -50,11 +36,13 @@ import EventTable from "@/components/eventlist/EventTable";
 import data from "@/api/data.json";
 import Search from "@/components/search/SearchForm";
 import XLSX from "xlsx";
+import Header from "@/components/common/Header.vue";
 
 export default {
   components: {
     EventTable,
     Search,
+    Header,
   },
   data() {
     return {
@@ -136,16 +124,6 @@ export default {
       XLSX.utils.book_append_sheet(wb, dataWS, "Event References");
       XLSX.writeFile(wb, "ItembayEventReferences.xlsx");
     },
-    logout() {
-      // eslint-disable-next-line no-alert
-      if (confirm("정말 로그아웃 하시겠습니까?")) {
-        this.loginActive = false;
-        this.$store.dispatch("loginUser", false);
-        // eslint-disable-next-line no-alert
-        alert("로그아웃 되었습니다.");
-        this.$router.go(0);
-      }
-    },
     registerRef() {
       this.$nextTick(() => {
         if (this.loginActive) {
@@ -214,7 +192,7 @@ export default {
   text-align: left;
 }
 .eventTab li:first-child {
-  margin-left:0;
+  margin-left: 0;
 }
 .eventTab li {
   display: inline-block;

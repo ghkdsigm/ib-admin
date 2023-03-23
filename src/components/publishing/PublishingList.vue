@@ -1,14 +1,17 @@
 <template>
   <div>
     <Header></Header>
+    <PublishingTable />
   </div>
 </template>
 
 <script>
 import Header from "@/components/common/Header.vue";
+import PublishingTable from "@/components/publishing/PublishingTable";
 export default {
   components: {
     Header,
+    PublishingTable,
   },
   data() {
     return {

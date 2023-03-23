@@ -123,13 +123,16 @@ tbEvent_202106OdinBingoLog -- 빙고 로그"
                 >내용 입력 후 Enter를 누르시면 추가가 됩니다.</span
               ></label
             >
-            <input
-              type="text"
-              id=""
-              placeholder="ex) up_Event_202211FIFA2022_GetCompetitionDate -- 경기 일자 조회"
-              v-model="addnewsp"
-              @keyup.enter="addNewSps"
-            />
+            <div class="newSpwrap">
+              <input
+                type="text"
+                id=""
+                placeholder="ex) up_Event_202211FIFA2022_GetCompetitionDate -- 경기 일자 조회"
+                v-model="addnewsp"
+                @keyup.enter="addNewSps"
+              />
+              <button type="button" @click="addNewSps">+</button>
+            </div>
           </div>
           <div v-if="this.registerList.newSp.length > 0">
             <label for=""></label>
@@ -316,6 +319,26 @@ h2 {
   border-radius: 6px;
   background-color: #f3f3f3;
   border: none;
+}
+#loginForm .newSpwrap {
+  position: relative;
+  width: 100%;
+}
+#loginForm .newSpwrap button {
+  position: absolute;
+  right: 0;
+  border-radius: 0 6px 6px 0;
+  height: 100%;
+  min-width: 30px;
+  border: none;
+  background: #484848;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+#loginForm .newSpwrap button:hover {
+  cursor: pointer;
 }
 #loginForm select {
   width: 50%;

@@ -48,6 +48,7 @@ export default {
       user_id: "",
       user_pw: "",
       loginActive: false,
+      userLevel: "",
     };
   },
   methods: {
@@ -64,6 +65,7 @@ export default {
           this.login = true;
           this.$store.dispatch("loginUser", true);
         } else if (this.user_id === "pb" && this.user_pw === "123") {
+          this.$store.dispatch("loginUser", true);
           this.$store.dispatch("userLevel", "pblisher");
           this.$router.push("/pbguide");
         } else {

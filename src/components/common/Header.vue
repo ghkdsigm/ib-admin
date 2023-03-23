@@ -4,7 +4,7 @@
       <div class="header">
         <h3>
           {{
-            userLevel === "admin"
+            userLevel === "admin" || userLevel === ""
               ? "아이템베이 이벤트 프로모션 레퍼런스 페이지"
               : "아이템베이 퍼블리싱 가이드 3.0"
           }}
@@ -54,7 +54,9 @@ export default {
         this.$store.dispatch("loginUser", false);
         // eslint-disable-next-line no-alert
         alert("로그아웃 되었습니다.");
-        this.$router.go(0);
+        // this.$router.go(0);
+        this.$router.push("/");
+        this.$store.dispatch("userLevel", "admin");
       }
     },
   },

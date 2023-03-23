@@ -243,7 +243,7 @@ export default {
     linkToMobile() {
       this.$nextTick(() => {
         window.open(
-          `http://ds-mb.itembay.co.kr:3002/pb-10186_%E5%85%88%ED%95%A0%EC%9D%B8%ED%98%95_%EC%8B%A0%EA%B7%9C_%EC%BF%A0%ED%8F%B0_IB%ED%8F%AC%EC%9D%B8%ED%8A%B8%EC%BF%A0%ED%8F%B0_%EC%B6%94%EA%B0%80_%EA%B1%B4/event${this.mobileUrl.mobilelocalPageUrl}`,
+          `http://ds-mb.itembay.co.kr/resources/event${this.mobileUrl.mobilelocalPageUrl}`,
           "_blank",
         );
       });

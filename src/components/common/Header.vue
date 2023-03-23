@@ -95,7 +95,7 @@ export default {
   text-align: right;
 }
 .header .loginbt:hover {
-  color: #4463d5;
+  color: red;
   cursor: pointer;
 }
 .header .loginbt em {

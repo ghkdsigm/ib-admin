@@ -47,17 +47,22 @@ export default {
   //   },
   methods: {
     logout() {
-      console.log(123);
-      // eslint-disable-next-line no-alert
-      if (confirm("정말 로그아웃 하시겠습니까?")) {
-        this.loginActive = false;
-        this.$store.dispatch("loginUser", false);
+      this.$nextTick(() => {
         // eslint-disable-next-line no-alert
-        alert("로그아웃 되었습니다.");
-        // this.$router.go(0);
-        this.$router.push("/");
-        this.$store.dispatch("userLevel", "admin");
-      }
+        if (confirm("정말 로그아웃 하시겠습니까?")) {
+          // eslint-disable-next-line no-alert
+          alert("로그아웃 되었습니다.");
+          // reload
+          this.$router.go(this.$router.currentRoute);
+          // if (this.$router.currentRoute.path !== "/") {
+          //   this.$router.push("/");
+          // }
+          this.loginActive = false;
+          this.$store.dispatch("loginUser", false);
+          // this.$router.go(0);
+          this.$store.dispatch("userLevel", "admin");
+        }
+      });
     },
   },
   mounted() {

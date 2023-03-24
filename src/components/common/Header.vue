@@ -21,14 +21,14 @@
           to="/login"
           v-if="this.loginActive !== true"
           class="loginbt"
-          >로그인</router-link
+          ><span>로그인</span></router-link
         >
-        <span class="loginbt" v-else @click="logout"
+        <span class="loginbt" v-else
           ><em
             >{{ userLevel === "admin" ? "관리자" : "퍼블리셔" }}님
             환영합니다.</em
           >
-          로그아웃</span
+          <span @click="logout">로그아웃</span></span
         >
       </div>
     </div>
@@ -110,7 +110,7 @@ export default {
   min-width: 200px;
   text-align: right;
 }
-.header .loginbt:hover {
+.header .loginbt span:last-child:hover {
   color: red;
   cursor: pointer;
 }

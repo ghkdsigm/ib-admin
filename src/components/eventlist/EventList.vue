@@ -88,41 +88,48 @@ export default {
       });
     },
     excelDown() {
-      for (const excel of this.selectedTab) {
-        const excelLogs = {
-          category: {},
-          code: "",
-          content: "",
-          etc: "",
-          function: "",
-          localPageUrl: "",
-          name: "",
-          pageUrl: "",
-          place: "",
-          seaseon: "",
-          tableSp: "",
-          workUrl: "",
-        };
-        excelLogs.category = excel.category.name;
-        excelLogs.code = excel.code;
-        excelLogs.content = excel.content;
-        excelLogs.etc = excel.etc;
-        excelLogs.function = excel.function;
-        excelLogs.localPageUrl = excel.localPageUrl;
-        excelLogs.name = excel.name;
-        excelLogs.pageUrl = excel.pageUrl;
-        excelLogs.place = excel.place;
-        excelLogs.seaseon = excel.seaseon;
-        excelLogs.tableSp = excel.newSp;
-        excelLogs.workUrl = excel.workUrl;
+      this.$nextTick(() => {
+        if (this.loginActive) {
+          for (const excel of this.selectedTab) {
+            const excelLogs = {
+              category: {},
+              code: "",
+              content: "",
+              etc: "",
+              function: "",
+              localPageUrl: "",
+              name: "",
+              pageUrl: "",
+              place: "",
+              seaseon: "",
+              tableSp: "",
+              workUrl: "",
+            };
+            excelLogs.category = excel.category.name;
+            excelLogs.code = excel.code;
+            excelLogs.content = excel.content;
+            excelLogs.etc = excel.etc;
+            excelLogs.function = excel.function;
+            excelLogs.localPageUrl = excel.localPageUrl;
+            excelLogs.name = excel.name;
+            excelLogs.pageUrl = excel.pageUrl;
+            excelLogs.place = excel.place;
+            excelLogs.seaseon = excel.seaseon;
+            excelLogs.tableSp = excel.newSp;
+            excelLogs.workUrl = excel.workUrl;
 
-        this.excel.push(excelLogs);
-      }
-
-      const dataWS = XLSX.utils.json_to_sheet(this.excel);
-      const wb = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(wb, dataWS, "Event References");
-      XLSX.writeFile(wb, "ItembayEventReferences.xlsx");
+            this.excel.push(excelLogs);
+          }
+          const dataWS = XLSX.utils.json_to_sheet(this.excel);
+          const wb = XLSX.utils.book_new();
+          XLSX.utils.book_append_sheet(wb, dataWS, "Event References");
+          XLSX.writeFile(wb, "ItembayEventReferences.xlsx");
+        } else {
+          // eslint-disable-next-line no-alert
+          alert("로그인이 필요합니다.");
+          this.$router.push("/login");
+        }
+      });
     },
     registerRef() {
       this.$nextTick(() => {

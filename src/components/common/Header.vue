@@ -13,6 +13,8 @@
           <img
             src="https://www.itembaycorp.com/resources/images/common/ico_logo.png"
             alt="아이템베이 로고"
+            class="homeLogo"
+            @click="toHome"
           />
         </div>
         <router-link
@@ -64,6 +66,15 @@ export default {
         }
       });
     },
+    toHome() {
+      this.$nextTick(() => {
+        // eslint-disable-next-line prettier/prettier
+        if(this.$router.currentRoute.path !== "/"){
+          this.$router.push("/");
+          this.$router.go(this.$router.currentRoute);
+        }
+      });
+    },
   },
   mounted() {
     this.loginActive = this.$store.state.loginActive;
@@ -107,5 +118,8 @@ export default {
   padding-right: 15px;
   color: #6a24fe;
   font-weight: 300;
+}
+.homeLogo {
+  cursor: pointer;
 }
 </style>
